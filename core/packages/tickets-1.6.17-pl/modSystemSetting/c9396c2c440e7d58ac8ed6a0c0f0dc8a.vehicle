@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '55d7225cbfbcde03a027031f75d6a7b1',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c9396c2c440e7d58ac8ed6a0c0f0dc8a',
+  'native_key' => 'tickets.editor_config.comment',
+  'object' => '{"key":"tickets.editor_config.comment","value":"{onTab: {keepDefault:false, replaceWith:\\"\\t\\"}\\n\\t\\t,markupSet: [\\n\\t\\t\\t{name:\\"Bold\\", className: \\"btn-bold\\", key:\\"B\\", openWith:\\"<b>\\", closeWith:\\"<\\/b>\\" }\\n\\t\\t\\t,{name:\\"Italic\\", className: \\"btn-italic\\", key:\\"I\\", openWith:\\"<i>\\", closeWith:\\"<\\/i>\\"  }\\n\\t\\t\\t,{name:\\"Underline\\", className: \\"btn-underline\\", key:\\"U\\", openWith:\\"<u>\\", closeWith:\\"<\\/u>\\" }\\n\\t\\t\\t,{name:\\"Stroke through\\", className: \\"btn-stroke\\", key:\\"S\\", openWith:\\"<s>\\", closeWith:\\"<\\/s>\\" }\\n\\t\\t\\t,{separator:\\"---------------\\" }\\n\\t\\t\\t,{name:\\"Quote\\", className: \\"btn-quote\\", openWith:\\"<blockquote>\\", closeWith:\\"<\\/blockquote>\\"}\\n\\t\\t\\t,{name:\\"Code\\", className: \\"btn-code\\", openWith:\\"<code>\\", closeWith:\\"<\\/code>\\"}\\n\\t\\t\\t,{name:\\"Link\\", className: \\"btn-link\\", openWith:\\"<a href=\\\\\\"[![Link:!:http:\\/\\/]!]\\\\\\">\\", closeWith:\\"<\\/a>\\" }\\n\\t\\t\\t,{name:\\"Picture\\", className: \\"btn-picture\\", replaceWith:\\"<img src=\\\\\\"[![Source:!:http:\\/\\/]!]\\\\\\" \\/>\\" }\\n\\t\\t]}","xtype":"textarea","namespace":"tickets","area":"tickets.comment","editedon":null}',
+);

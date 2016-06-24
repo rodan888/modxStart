@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c200f9d89c1ca38d31fa2ebe25fbc37f',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '187fe10f724bdb82ddcf3ac9c9364c03',
+  'native_key' => 'tickets.snippet_prepare_comment',
+  'object' => '{"key":"tickets.snippet_prepare_comment","value":"","xtype":"textfield","namespace":"tickets","area":"tickets.comment","editedon":null}',
+);

@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'update_object' => true,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7903e759ae84b01b26897a5215b9bf59',
+  'package' => 'modx',
+  'class' => 'modAccessPolicy',
+  'signature' => '4d94c137ee62082ea204ec9e574bdd6d',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"TicketVipPolicy","description":"A policy for create and update private Tickets.","parent":0,"template":0,"class":"","data":"{\\"ticket_delete\\":true,\\"ticket_publish\\":true,\\"ticket_save\\":true,\\"ticket_vote\\":true,\\"ticket_star\\":true,\\"comment_save\\":true,\\"comment_delete\\":true,\\"comment_remove\\":true,\\"comment_publish\\":true,\\"comment_vote\\":true,\\"comment_star\\":true,\\"ticket_view_private\\":true,\\"ticket_file_upload\\":true,\\"ticket_file_delete\\":true,\\"thread_close\\":true,\\"thread_delete\\":true,\\"thread_remove\\":true}","lexicon":"tickets:permissions"}',
+);

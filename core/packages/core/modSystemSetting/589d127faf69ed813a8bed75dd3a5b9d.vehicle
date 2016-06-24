@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => false,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '596de149a2823311330c8d6523e440f5',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '589d127faf69ed813a8bed75dd3a5b9d',
+  'native_key' => 'allow_multiple_emails',
+  'object' => '{"key":"allow_multiple_emails","value":true,"xtype":"combo-boolean","namespace":"core","area":"authentication","editedon":null}',
+);

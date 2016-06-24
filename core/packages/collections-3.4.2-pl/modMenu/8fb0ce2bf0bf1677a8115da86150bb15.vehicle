@@ -1,0 +1,50 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      '863501e6a2aebf636d6bcab8b2c0e848' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"collections","controller":"index","haslayout":1,"lang_topics":"collections:default","assets":"","help_url":"","parent":0}',
+        'guid' => 'aa5a3dae522de5c8745dc4d87bc8fca4',
+        'native_key' => 1,
+        'signature' => 'c05f00288a71a27afdf917bfc6517beb',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'collections',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'bb4f1f8ecdf4f1e28d15d458cc7c191b',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '8fb0ce2bf0bf1677a8115da86150bb15',
+  'native_key' => 'collections.menu.collection_templates',
+  'object' => '{"text":"collections.menu.collection_templates","parent":"components","action":1,"description":"collections.menu.collection_templates_desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"core"}',
+);

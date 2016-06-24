@@ -1,0 +1,54 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'console',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"console-2.1.0-beta\\/modCategory\\/3ea4bda145ca8644ecf182e48df5b25b\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"console"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"console-2.1.0-beta\\/modCategory\\/3ea4bda145ca8644ecf182e48df5b25b\\/1\\/","target":"return MODX_MANAGER_PATH . \'components\\/\';","name":"console"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '88bb1a976d8cab85d329a27afbbc9f1a',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '3ea4bda145ca8644ecf182e48df5b25b',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"Console"}',
+);

@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '288d39243b38066790d81751f32ec49a',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '48a61f11b0db8a8b1a2ca476118517bc',
+  'native_key' => 'OnPluginBeforeRemove',
+  'object' => '{"name":"OnPluginBeforeRemove","service":1,"groupname":"Plugins"}',
+);

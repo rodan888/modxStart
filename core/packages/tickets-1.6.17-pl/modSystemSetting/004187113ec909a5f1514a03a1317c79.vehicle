@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '67dec27df2c8d1503f55630504b9ce60',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '004187113ec909a5f1514a03a1317c79',
+  'native_key' => 'tickets.default_template',
+  'object' => '{"key":"tickets.default_template","value":"","xtype":"modx-combo-template","namespace":"tickets","area":"tickets.ticket","editedon":null}',
+);

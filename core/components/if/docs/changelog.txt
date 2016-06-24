@@ -1,0 +1,9 @@
+Changelog for If.
+
+If 1.1.1
+====================================
+- #1 Fix installation error in Package Manager
+
+If 1.1.0
+====================================
+- Added in_array operator

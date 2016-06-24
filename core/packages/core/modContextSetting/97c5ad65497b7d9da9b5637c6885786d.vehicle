@@ -1,0 +1,21 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => false,
+  'unique_key' => 
+  array (
+    0 => 'context_key',
+    1 => 'key',
+  ),
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '8b7373a5c852b2b5418d693948a41b7c',
+  'package' => 'modx',
+  'class' => 'modContextSetting',
+  'signature' => '97c5ad65497b7d9da9b5637c6885786d',
+  'native_key' => 
+  array (
+    0 => 'mgr',
+    1 => 'modRequest.class',
+  ),
+  'object' => '{"context_key":"mgr","key":"modRequest.class","value":"modManagerRequest","xtype":"textfield","namespace":"core","area":"system","editedon":null}',
+);

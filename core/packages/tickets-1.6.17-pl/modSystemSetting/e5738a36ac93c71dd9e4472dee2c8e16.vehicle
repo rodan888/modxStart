@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ad5299a6053a8311d9eed355f8407a1d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'e5738a36ac93c71dd9e4472dee2c8e16',
+  'native_key' => 'tickets.editor_config.ticket',
+  'object' => '{"key":"tickets.editor_config.ticket","value":"{onTab: {keepDefault:false, replaceWith:\\"\\t\\"}\\n\\t\\t,markupSet: [\\n\\t\\t\\t{name:\\"Bold\\", className: \\"btn-bold\\", key:\\"B\\", openWith:\\"<b>\\", closeWith:\\"<\\/b>\\" }\\n\\t\\t\\t,{name:\\"Italic\\", className: \\"btn-italic\\", key:\\"I\\", openWith:\\"<i>\\", closeWith:\\"<\\/i>\\"  }\\n\\t\\t\\t,{name:\\"Underline\\", className: \\"btn-underline\\", key:\\"U\\", openWith:\\"<u>\\", closeWith:\\"<\\/u>\\" }\\n\\t\\t\\t,{name:\\"Stroke through\\", className: \\"btn-stroke\\", key:\\"S\\", openWith:\\"<s>\\", closeWith:\\"<\\/s>\\" }\\n\\t\\t\\t,{separator:\\"---------------\\" }\\n\\t\\t\\t,{name:\\"Bulleted List\\", className: \\"btn-bulleted\\", openWith:\\"\\t<li>\\", closeWith:\\"<\\/li>\\", multiline:true, openBlockWith:\\"<ul>\\\\n\\", closeBlockWith:\\"\\\\n<\\/ul>\\"}\\n\\t\\t\\t,{name:\\"Numeric List\\", className: \\"btn-numeric\\", openWith:\\"\\t<li>\\", closeWith:\\"<\\/li>\\", multiline:true, openBlockWith:\\"<ol>\\\\n\\", closeBlockWith:\\"\\\\n<\\/ol>\\"}\\n\\t\\t\\t,{separator:\\"---------------\\" }\\n\\t\\t\\t,{name:\\"Quote\\", className: \\"btn-quote\\", openWith:\\"<blockquote>\\", closeWith:\\"<\\/blockquote>\\"}\\n\\t\\t\\t,{name:\\"Code\\", className: \\"btn-code\\", openWith:\\"<code>\\", closeWith:\\"<\\/code>\\"}\\n\\t\\t\\t,{name:\\"Link\\", className: \\"btn-link\\", openWith:\\"<a href=\\\\\\"[![Link:!:http:\\/\\/]!]\\\\\\">\\", closeWith:\\"<\\/a>\\" }\\n\\t\\t\\t,{name:\\"Picture\\", className: \\"btn-picture\\", replaceWith:\\"<img src=\\\\\\"[![Source:!:http:\\/\\/]!]\\\\\\" \\/>\\" }\\n\\t\\t\\t,{separator:\\"---------------\\" }\\n\\t\\t\\t,{name:\\"Cut\\", className: \\"btn-cut\\", openWith:\\"<cut\\/>\\" }\\n\\t\\t]}","xtype":"textarea","namespace":"tickets","area":"tickets.ticket","editedon":null}',
+);

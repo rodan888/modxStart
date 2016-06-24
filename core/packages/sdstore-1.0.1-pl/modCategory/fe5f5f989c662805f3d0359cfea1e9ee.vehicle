@@ -1,0 +1,24 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'namespace' => 'sdstore',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"sdstore-1.0.1-pl\\/modCategory\\/fe5f5f989c662805f3d0359cfea1e9ee.resolve.setup.resolver","type":"php","name":"resolve.setup"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a1def55edf5265b43f7231daf0323d9c',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'fe5f5f989c662805f3d0359cfea1e9ee',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"sdStore"}',
+);

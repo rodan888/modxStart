@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '69a973a14ac9febbb7a07b92c8c47ad2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd09d109c5bad3c0423e7755ef2f0d8a9',
+  'native_key' => 'tickets.clear_cache_on_comment_save',
+  'object' => '{"key":"tickets.clear_cache_on_comment_save","value":false,"xtype":"combo-boolean","namespace":"tickets","area":"tickets.comment","editedon":null}',
+);

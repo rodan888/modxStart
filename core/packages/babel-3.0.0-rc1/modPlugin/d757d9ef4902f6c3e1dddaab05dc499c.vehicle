@@ -1,0 +1,149 @@
+<?php return array (
+  'unique_key' => 'name',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      '94647777af00147ceed62712a33410f1' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnDocFormPrerender","priority":0,"propertyset":0}',
+        'guid' => '2bf0f10e1062f52e9d2da7ff48d18d26',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnDocFormPrerender',
+        ),
+        'signature' => '3413903b6607af0ffc773c69eb7a83ac',
+      ),
+      '8e72ffa1ef710e09f8c506fa4f0bc018' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnDocFormSave","priority":0,"propertyset":0}',
+        'guid' => 'e06eaed873ef777424323d834bcd6b40',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnDocFormSave',
+        ),
+        'signature' => 'a6122723b083461d24db5d3bff33788c',
+      ),
+      'a2d563a7690df44e96c237f3f31f92c0' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnEmptyTrash","priority":0,"propertyset":0}',
+        'guid' => 'd6229613e0f4617cabcc390b98c1d8cd',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnEmptyTrash',
+        ),
+        'signature' => '246e798592e909e717c252a7c4e5cbf8',
+      ),
+      '6f8b483b22927688d024f69852d6bb6b' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnContextRemove","priority":0,"propertyset":0}',
+        'guid' => 'bed7c7df00f6f74293821927018f428e',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnContextRemove',
+        ),
+        'signature' => '50d446c381e21f27b83944350ca9e0c0',
+      ),
+      'ab67c14309e65a9d99c5af51d4aa66a1' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnResourceDuplicate","priority":0,"propertyset":0}',
+        'guid' => '580979a90426ee594d592beb2ce53315',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnResourceDuplicate',
+        ),
+        'signature' => '36decafea3258d8bd5d3043a0044e207',
+      ),
+      'f607ff41eff585aa013f4c009d283aa7' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnResourceSort","priority":0,"propertyset":0}',
+        'guid' => '7dbc15001323b217eab72a2e022c4f49',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnResourceSort',
+        ),
+        'signature' => '215d69f76e490054558d66e4ed80e433',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'dbe844c9f2fdd64c6ab2aa823aa4451a',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => 'd757d9ef4902f6c3e1dddaab05dc499c',
+  'native_key' => 1,
+  'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"Babel","description":"Links and synchronizes multilingual resources.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * Babel\\n *\\n * Copyright 2010 by Jakob Class <jakob.class@class-zec.de>\\n *\\n * This file is part of Babel.\\n *\\n * Babel is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Babel is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Babel; if not, write to the Free Software Foundation, Inc., 59 Temple Place,\\n * Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package babel\\n *\\/\\n\\/**\\n * Babel Plugin to link and synchronize multilingual resources\\n *\\n * Based on ideas of Sylvain Aerni <enzyms@gmail.com>\\n *\\n * Events:\\n * OnDocFormPrerender,OnDocFormSave,OnEmptyTrash,OnContextRemove,OnResourceDuplicate\\n *\\n * @author Jakob Class <jakob.class@class-zec.de>\\n *         goldsky <goldsky@virtudraft.com>\\n *\\n * @package babel\\n *\\n *\\/\\n\\n$babel = $modx->getService(\'babel\',\'Babel\',$modx->getOption(\'babel.core_path\',null,$modx->getOption(\'core_path\').\'components\\/babel\\/\').\'model\\/babel\\/\');\\n\\n\\/* be sure babel TV is loaded *\\/\\nif (!($babel instanceof Babel) || !$babel->babelTv) return;\\n\\nswitch ($modx->event->name) {\\n\\tcase \'OnDocFormPrerender\':\\n\\t\\t$output = \'\';\\n\\t\\t$errorMessage = \'\';\\n\\t\\t$resource =& $modx->event->params[\'resource\'];\\n\\t\\tif(!$resource) {\\n\\t\\t\\t\\/* a new resource is being to created\\n\\t\\t\\t * -> skip rendering the babel box *\\/\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\t$linkedResources = $babel->getLinkedResources($resource->get(\'id\'));\\n\\t\\tif(empty($linkedResources)) {\\n\\t\\t\\t\\/* always be sure that the Babel TV is set *\\/\\n\\t\\t\\t$babel->initBabelTv($resource);\\n\\t\\t}\\n\\n\\t\\t\\/* create babel-box with links to translations *\\/\\n\\t\\t$outputLanguageItems = \'\';\\n        if (!$modx->lexicon) {\\n            $modx->getService(\'lexicon\',\'modLexicon\');\\n        }\\n        $languagesStore = array();\\n\\t\\t$contextKeys = $babel->getGroupContextKeys($resource->get(\'context_key\'));\\n\\t\\tforeach($contextKeys as $contextKey) {\\n\\t\\t\\t\\/* for each (valid\\/existing) context of the context group a button will be displayed *\\/\\n\\t\\t\\t$context = $modx->getObject(\'modContext\', array(\'key\' => $contextKey));\\n\\t\\t\\tif(!$context) {\\n\\t\\t\\t\\t$modx->log(modX::LOG_LEVEL_ERROR, \'Could not load context: \'.$contextKey);\\n\\t\\t\\t\\tcontinue;\\n\\t\\t\\t}\\n\\t\\t\\t$context->prepare();\\n\\t\\t\\t$cultureKey = $context->getOption(\'cultureKey\',$modx->getOption(\'cultureKey\'));\\n            $languagesStore[] = array($modx->lexicon(\'babel.language_\'.$cultureKey).\\" ($contextKey)\\", $contextKey);\\n        }\\n\\n        $babel->config[\'context_key\'] = $resource->get(\'context_key\');\\n        $babel->config[\'languagesStore\'] = $languagesStore;\\n        $babel->config[\'menu\'] = $babel->getMenu($resource);\\n        if (empty($babel->config[\'menu\'])) {\\n            $modx->log(modX::LOG_LEVEL_ERROR, \'[Babel] Could not load menu for context key: \\"\' . $babel->config[\'context_key\'] . \'\\". Try to check \\"babel.contextKeys\\" in System Settings. If this is intended, you can ignore this warning.\');\\n            return;\\n        }\\n        $version = str_replace(\' \', \'\', $babel->config[\'version\']);\\n        $isCSSCompressed = $modx->getOption(\'compress_css\');\\n        $withVersion = $isCSSCompressed ? \'\' : \'?v=\'.$version;\\n        $modx->controller->addCss($babel->config[\'cssUrl\'].\'babel.css\'.$withVersion);\\n\\n        $modx->controller->addLexiconTopic(\'babel:default\');\\n        $isJsCompressed = $modx->getOption(\'compress_js\');\\n        $withVersion = $isJsCompressed ? \'\' : \'?v=\'.$version;\\n        $modx->controller->addJavascript($babel->config[\'jsUrl\'].\'babel.class.js\'.$withVersion);\\n        $modx->controller->addHtml(\'\\n<script type=\\"text\\/javascript\\">\\n    Ext.onReady(function () {\\n        var babel = new Babel(\'.json_encode($babel->config).\');\\n        babel.getMenu(babel.config.menu);\\n    });\\n<\\/script>\');\\n        break;\\n\\n\\tcase \'OnDocFormSave\':\\n\\t\\t$resource =& $modx->event->params[\'resource\'];\\n\\t\\tif(!$resource) {\\n\\t\\t\\t$modx->log(modX::LOG_LEVEL_ERROR, \'No resource provided for OnDocFormSave event\');\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\tif($modx->event->params[\'mode\'] == modSystemEvent::MODE_NEW) {\\n\\t\\t\\t\\/* no TV synchronization for new resources, just init Babel TV *\\/\\n\\t\\t\\t$babel->initBabelTv($resource);\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\t$babel->synchronizeTvs($resource->get(\'id\'));\\n\\t\\tbreak;\\n\\n\\tcase \'OnEmptyTrash\':\\n\\t\\t\\/* remove translation links to non-existing resources *\\/\\n\\t\\t$deletedResourceIds =& $modx->event->params[\'ids\'];\\n\\t\\tif(is_array($deletedResourceIds)) {\\n\\t\\t\\tforeach ($deletedResourceIds as $deletedResourceId) {\\n\\t\\t\\t\\t$babel->removeLanguageLinksToResource($deletedResourceId);\\n\\t\\t\\t}\\n\\t\\t}\\n\\t\\tbreak;\\n\\n\\tcase \'OnContextRemove\':\\n\\t\\t\\/* remove translation links to non-existing contexts *\\/\\n\\t\\t$context =& $modx->event->params[\'context\'];\\n\\t\\tif($context) {\\n\\t\\t\\t$babel->removeLanguageLinksToContext($context->get(\'key\'));\\n\\t\\t}\\n\\t\\tbreak;\\n\\n\\tcase \'OnResourceDuplicate\':\\n\\t\\t\\/* init Babel TV of duplicated resources *\\/\\n\\t\\t$resource =& $modx->event->params[\'newResource\'];\\n        $babel->initBabelTvsRecursive($modx,$babel,$resource->get(\'id\'));\\n\\t\\tbreak;\\n\\n    case \'OnResourceSort\':\\n        $nodesAffected =& $modx->event->params[\'nodesAffected\'];\\n        foreach ($nodesAffected as $node) {\\n            $linkedResources = $babel->getLinkedResources($node->get(\'id\'));\\n            foreach ($linkedResources as $key => $id) {\\n                if ($id === $node->get(\'id\')) {\\n                    unset($linkedResources[$key]);\\n                }\\n            }\\n            $linkedResources[$node->get(\'context_key\')] = $node->get(\'id\');\\n            $babel->updateBabelTv($linkedResources, $linkedResources);\\n        }\\n\\n        break;\\n}\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Babel\\n *\\n * Copyright 2010 by Jakob Class <jakob.class@class-zec.de>\\n *\\n * This file is part of Babel.\\n *\\n * Babel is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Babel is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Babel; if not, write to the Free Software Foundation, Inc., 59 Temple Place,\\n * Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package babel\\n *\\/\\n\\/**\\n * Babel Plugin to link and synchronize multilingual resources\\n *\\n * Based on ideas of Sylvain Aerni <enzyms@gmail.com>\\n *\\n * Events:\\n * OnDocFormPrerender,OnDocFormSave,OnEmptyTrash,OnContextRemove,OnResourceDuplicate\\n *\\n * @author Jakob Class <jakob.class@class-zec.de>\\n *         goldsky <goldsky@virtudraft.com>\\n *\\n * @package babel\\n *\\n *\\/\\n\\n$babel = $modx->getService(\'babel\',\'Babel\',$modx->getOption(\'babel.core_path\',null,$modx->getOption(\'core_path\').\'components\\/babel\\/\').\'model\\/babel\\/\');\\n\\n\\/* be sure babel TV is loaded *\\/\\nif (!($babel instanceof Babel) || !$babel->babelTv) return;\\n\\nswitch ($modx->event->name) {\\n\\tcase \'OnDocFormPrerender\':\\n\\t\\t$output = \'\';\\n\\t\\t$errorMessage = \'\';\\n\\t\\t$resource =& $modx->event->params[\'resource\'];\\n\\t\\tif(!$resource) {\\n\\t\\t\\t\\/* a new resource is being to created\\n\\t\\t\\t * -> skip rendering the babel box *\\/\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\t$linkedResources = $babel->getLinkedResources($resource->get(\'id\'));\\n\\t\\tif(empty($linkedResources)) {\\n\\t\\t\\t\\/* always be sure that the Babel TV is set *\\/\\n\\t\\t\\t$babel->initBabelTv($resource);\\n\\t\\t}\\n\\n\\t\\t\\/* create babel-box with links to translations *\\/\\n\\t\\t$outputLanguageItems = \'\';\\n        if (!$modx->lexicon) {\\n            $modx->getService(\'lexicon\',\'modLexicon\');\\n        }\\n        $languagesStore = array();\\n\\t\\t$contextKeys = $babel->getGroupContextKeys($resource->get(\'context_key\'));\\n\\t\\tforeach($contextKeys as $contextKey) {\\n\\t\\t\\t\\/* for each (valid\\/existing) context of the context group a button will be displayed *\\/\\n\\t\\t\\t$context = $modx->getObject(\'modContext\', array(\'key\' => $contextKey));\\n\\t\\t\\tif(!$context) {\\n\\t\\t\\t\\t$modx->log(modX::LOG_LEVEL_ERROR, \'Could not load context: \'.$contextKey);\\n\\t\\t\\t\\tcontinue;\\n\\t\\t\\t}\\n\\t\\t\\t$context->prepare();\\n\\t\\t\\t$cultureKey = $context->getOption(\'cultureKey\',$modx->getOption(\'cultureKey\'));\\n            $languagesStore[] = array($modx->lexicon(\'babel.language_\'.$cultureKey).\\" ($contextKey)\\", $contextKey);\\n        }\\n\\n        $babel->config[\'context_key\'] = $resource->get(\'context_key\');\\n        $babel->config[\'languagesStore\'] = $languagesStore;\\n        $babel->config[\'menu\'] = $babel->getMenu($resource);\\n        if (empty($babel->config[\'menu\'])) {\\n            $modx->log(modX::LOG_LEVEL_ERROR, \'[Babel] Could not load menu for context key: \\"\' . $babel->config[\'context_key\'] . \'\\". Try to check \\"babel.contextKeys\\" in System Settings. If this is intended, you can ignore this warning.\');\\n            return;\\n        }\\n        $version = str_replace(\' \', \'\', $babel->config[\'version\']);\\n        $isCSSCompressed = $modx->getOption(\'compress_css\');\\n        $withVersion = $isCSSCompressed ? \'\' : \'?v=\'.$version;\\n        $modx->controller->addCss($babel->config[\'cssUrl\'].\'babel.css\'.$withVersion);\\n\\n        $modx->controller->addLexiconTopic(\'babel:default\');\\n        $isJsCompressed = $modx->getOption(\'compress_js\');\\n        $withVersion = $isJsCompressed ? \'\' : \'?v=\'.$version;\\n        $modx->controller->addJavascript($babel->config[\'jsUrl\'].\'babel.class.js\'.$withVersion);\\n        $modx->controller->addHtml(\'\\n<script type=\\"text\\/javascript\\">\\n    Ext.onReady(function () {\\n        var babel = new Babel(\'.json_encode($babel->config).\');\\n        babel.getMenu(babel.config.menu);\\n    });\\n<\\/script>\');\\n        break;\\n\\n\\tcase \'OnDocFormSave\':\\n\\t\\t$resource =& $modx->event->params[\'resource\'];\\n\\t\\tif(!$resource) {\\n\\t\\t\\t$modx->log(modX::LOG_LEVEL_ERROR, \'No resource provided for OnDocFormSave event\');\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\tif($modx->event->params[\'mode\'] == modSystemEvent::MODE_NEW) {\\n\\t\\t\\t\\/* no TV synchronization for new resources, just init Babel TV *\\/\\n\\t\\t\\t$babel->initBabelTv($resource);\\n\\t\\t\\tbreak;\\n\\t\\t}\\n\\t\\t$babel->synchronizeTvs($resource->get(\'id\'));\\n\\t\\tbreak;\\n\\n\\tcase \'OnEmptyTrash\':\\n\\t\\t\\/* remove translation links to non-existing resources *\\/\\n\\t\\t$deletedResourceIds =& $modx->event->params[\'ids\'];\\n\\t\\tif(is_array($deletedResourceIds)) {\\n\\t\\t\\tforeach ($deletedResourceIds as $deletedResourceId) {\\n\\t\\t\\t\\t$babel->removeLanguageLinksToResource($deletedResourceId);\\n\\t\\t\\t}\\n\\t\\t}\\n\\t\\tbreak;\\n\\n\\tcase \'OnContextRemove\':\\n\\t\\t\\/* remove translation links to non-existing contexts *\\/\\n\\t\\t$context =& $modx->event->params[\'context\'];\\n\\t\\tif($context) {\\n\\t\\t\\t$babel->removeLanguageLinksToContext($context->get(\'key\'));\\n\\t\\t}\\n\\t\\tbreak;\\n\\n\\tcase \'OnResourceDuplicate\':\\n\\t\\t\\/* init Babel TV of duplicated resources *\\/\\n\\t\\t$resource =& $modx->event->params[\'newResource\'];\\n        $babel->initBabelTvsRecursive($modx,$babel,$resource->get(\'id\'));\\n\\t\\tbreak;\\n\\n    case \'OnResourceSort\':\\n        $nodesAffected =& $modx->event->params[\'nodesAffected\'];\\n        foreach ($nodesAffected as $node) {\\n            $linkedResources = $babel->getLinkedResources($node->get(\'id\'));\\n            foreach ($linkedResources as $key => $id) {\\n                if ($id === $node->get(\'id\')) {\\n                    unset($linkedResources[$key]);\\n                }\\n            }\\n            $linkedResources[$node->get(\'context_key\')] = $node->get(\'id\');\\n            $babel->updateBabelTv($linkedResources, $linkedResources);\\n        }\\n\\n        break;\\n}\\nreturn;"}',
+);

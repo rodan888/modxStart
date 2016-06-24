@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '2c83eefc4937c408a5c30d848b9002d9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'e196139986014d395eaf53e1831e775a',
+  'native_key' => 'babel.contextKeys',
+  'object' => '{"key":"babel.contextKeys","value":"","xtype":"textfield","namespace":"babel","area":"common","editedon":null}',
+);

@@ -1,0 +1,57 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      '8aff156066d861f7eb4b0ef5be3c15af' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"migx","controller":"index","haslayout":0,"lang_topics":"example:default","assets":"","help_url":""}',
+        'guid' => '439ecf841344186fa446bbec225fd44c',
+        'native_key' => 1,
+        'signature' => '53df40fe59bb0abe916548d902ae2d50',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'migx',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"migx-2.9.6-pl\\/modMenu\\/e4fccf07c824886b55a8c007369010db.resolve.menues.resolver","type":"php","name":"resolve.menues"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3b994a9585cf3961149e3abae1f18740',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => 'e4fccf07c824886b55a8c007369010db',
+  'native_key' => 'migx',
+  'object' => '{"text":"migx","parent":"","action":1,"description":"","icon":"","menuindex":0,"params":"&configs=packagemanager||migxconfigs||setup","handler":"","permissions":"","namespace":"core"}',
+);

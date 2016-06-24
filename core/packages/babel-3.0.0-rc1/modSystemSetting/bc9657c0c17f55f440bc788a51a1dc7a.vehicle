@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c6bba4c0d04a223d9f15970375afc784',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'bc9657c0c17f55f440bc788a51a1dc7a',
+  'native_key' => 'babel.syncTvs',
+  'object' => '{"key":"babel.syncTvs","value":"","xtype":"textfield","namespace":"babel","area":"common","editedon":null}',
+);

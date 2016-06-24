@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'collections',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5e550607c52fd2bbf66e30688dd0f2b9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c43e76f4ab4443100152767ed7d13094',
+  'native_key' => 'collections.user_css',
+  'object' => '{"key":"collections.user_css","value":"","xtype":"textfield","namespace":"collections","area":"default","editedon":null}',
+);

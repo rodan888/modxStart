@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'collections',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '53ffa9ab425a9fb2af6cbd4f76d25bec',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '19ed7ab65e5451d7f952eff202a805a9',
+  'native_key' => 'collections.tree_tbar_selection',
+  'object' => '{"key":"collections.tree_tbar_selection","value":0,"xtype":"combo-boolean","namespace":"collections","area":"default","editedon":null}',
+);

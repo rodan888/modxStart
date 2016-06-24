@@ -1,4 +1,4 @@
 <?php
 return array (
-  'activeTab' => 2,
+  0 => '/n_ug_0',
 );

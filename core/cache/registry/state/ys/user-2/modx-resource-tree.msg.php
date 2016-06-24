@@ -1,4 +1,4 @@
 <?php
 return array (
-  'activeTab' => 2,
+  0 => '/root/web_0',
 );

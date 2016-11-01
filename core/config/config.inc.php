@@ -7,9 +7,9 @@ $database_server = 'localhost';
 $database_user = 'root';
 $database_password = '';
 $database_connection_charset = 'utf8';
-$dbase = 'modx_db';
+$dbase = 'modx_start';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=localhost;dbname=modx_db;charset=utf8';
+$database_dsn = 'mysql:host=localhost;dbname=modx_start;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
@@ -23,27 +23,27 @@ $https_port = '443';
 $uuid = '422c53c9-398f-4437-9c4e-f9ddf67668fd';
 
 if (!defined('MODX_CORE_PATH')) {
-    $modx_core_path= 'C:/OpenServer/domains/modxStart/core/';
+    $modx_core_path= 'C:/OpenServer/domains/ModxStart/core/';
     define('MODX_CORE_PATH', $modx_core_path);
 }
 if (!defined('MODX_PROCESSORS_PATH')) {
-    $modx_processors_path= 'C:/OpenServer/domains/modxStart/core/model/modx/processors/';
+    $modx_processors_path= 'C:/OpenServer/domains/ModxStart/core/model/modx/processors/';
     define('MODX_PROCESSORS_PATH', $modx_processors_path);
 }
 if (!defined('MODX_CONNECTORS_PATH')) {
-    $modx_connectors_path= 'C:/OpenServer/domains/modxStart/connectors/';
+    $modx_connectors_path= 'C:/OpenServer/domains/ModxStart/connectors/';
     $modx_connectors_url= '/connectors/';
     define('MODX_CONNECTORS_PATH', $modx_connectors_path);
     define('MODX_CONNECTORS_URL', $modx_connectors_url);
 }
 if (!defined('MODX_MANAGER_PATH')) {
-    $modx_manager_path= 'C:/OpenServer/domains/modxStart/manager/';
+    $modx_manager_path= 'C:/OpenServer/domains/ModxStart/manager/';
     $modx_manager_url= '/manager/';
     define('MODX_MANAGER_PATH', $modx_manager_path);
     define('MODX_MANAGER_URL', $modx_manager_url);
 }
 if (!defined('MODX_BASE_PATH')) {
-    $modx_base_path= 'C:/OpenServer/domains/modxStart/';
+    $modx_base_path= 'C:/OpenServer/domains/ModxStart/';
     $modx_base_url= '/';
     define('MODX_BASE_PATH', $modx_base_path);
     define('MODX_BASE_URL', $modx_base_url);
@@ -75,7 +75,7 @@ if (!defined('MODX_SITE_URL')) {
     define('MODX_SITE_URL', $site_url);
 }
 if (!defined('MODX_ASSETS_PATH')) {
-    $modx_assets_path= 'C:/OpenServer/domains/modxStart/assets/';
+    $modx_assets_path= 'C:/OpenServer/domains/ModxStart/assets/';
     $modx_assets_url= '/assets/';
     define('MODX_ASSETS_PATH', $modx_assets_path);
     define('MODX_ASSETS_URL', $modx_assets_url);

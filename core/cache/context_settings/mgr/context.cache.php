@@ -102,15 +102,15 @@
     ),
     'OnRichTextBrowserInit' => 
     array (
-      6 => '6',
+      9 => '9',
     ),
     'OnRichTextEditorInit' => 
     array (
-      6 => '6',
+      9 => '9',
     ),
     'OnRichTextEditorRegister' => 
     array (
-      6 => '6',
+      9 => '9',
       1 => '1',
     ),
     'OnSiteRefresh' => 
@@ -447,13 +447,13 @@ return;',
       'static' => '0',
       'static_file' => 'core/components/pdotools/elements/plugins/plugin.pdotools.php',
     ),
-    6 => 
+    9 => 
     array (
-      'id' => '6',
+      'id' => '9',
       'source' => '0',
       'property_preprocess' => '0',
       'name' => 'TinyMCE',
-      'description' => 'TinyMCE 4.3.3-pl plugin for MODx Revolution',
+      'description' => 'TinyMCE 4.3.4-pl plugin for MODx Revolution',
       'editor_type' => '0',
       'category' => '0',
       'cache_type' => '0',

@@ -1,2 +1,36 @@
 [2016-06-24 16:17:06] (ERROR @ C:\OpenServer\domains\modxStart\core\model\modx\modcachemanager.class.php : 350) Error caching lexicon topic lexicon/en/core/default
 [2016-06-24 16:40:07] (ERROR @ C:\OpenServer\domains\modxStart\core\model\modx\modcachemanager.class.php : 350) Error caching lexicon topic lexicon/ru/core/resource
+[2016-11-01 20:25:13] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:13] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:13] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:13] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:14] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR @ C:\OpenServer\domains\ModxStart\core\xpdo\om\xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'
+[2016-11-01 20:25:22] (ERROR in xPDOConnection::connect @ C:\OpenServer\domains\ModxStart\core\xpdo\xpdo.class.php : 3083) SQLSTATE[42000] [1049] Unknown database 'modx_db'

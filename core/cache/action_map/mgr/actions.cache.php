@@ -9,7 +9,7 @@
     'assets' => '',
     'help_url' => '',
     'namespace_name' => 'collections',
-    'namespace_path' => 'C:/OpenServer/domains/modxStart/core/components/collections/',
+    'namespace_path' => 'C:/OpenServer/domains/ModxStart/core/components/collections/',
     'namespace_assets_path' => '{assets_path}components/collections/',
   ),
   2 => 
@@ -22,7 +22,7 @@
     'assets' => '',
     'help_url' => '',
     'namespace_name' => 'console',
-    'namespace_path' => 'C:/OpenServer/domains/modxStart/core/components/console/',
+    'namespace_path' => 'C:/OpenServer/domains/ModxStart/core/components/console/',
     'namespace_assets_path' => '{assets_path}components/console/',
   ),
   3 => 
@@ -35,7 +35,7 @@
     'assets' => '',
     'help_url' => '',
     'namespace_name' => 'formit',
-    'namespace_path' => 'C:/OpenServer/domains/modxStart/core/components/formit/',
+    'namespace_path' => 'C:/OpenServer/domains/ModxStart/core/components/formit/',
     'namespace_assets_path' => '{assets_path}components/formit/',
   ),
   4 => 
@@ -48,7 +48,7 @@
     'assets' => '',
     'help_url' => '',
     'namespace_name' => 'migx',
-    'namespace_path' => 'C:/OpenServer/domains/modxStart/core/components/migx/',
+    'namespace_path' => 'C:/OpenServer/domains/ModxStart/core/components/migx/',
     'namespace_assets_path' => '{assets_path}components/migx/',
   ),
   5 => 
@@ -61,7 +61,7 @@
     'assets' => '',
     'help_url' => '',
     'namespace_name' => 'tickets',
-    'namespace_path' => 'C:/OpenServer/domains/modxStart/core/components/tickets/',
+    'namespace_path' => 'C:/OpenServer/domains/ModxStart/core/components/tickets/',
     'namespace_assets_path' => '',
   ),
 );

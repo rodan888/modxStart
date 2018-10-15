@@ -95,8 +95,11 @@ $_lang['setting_allow_manager_login_forgot_password_desc'] = 'Om denna sätts ti
 $_lang['setting_allow_tags_in_post'] = 'Tillåt taggar i POST';
 $_lang['setting_allow_tags_in_post_desc'] = 'Om denna sätts till "Nej" kommer alla POST-händelser i hanteraren att rensas från HTML-taggar. MODX rekommenderar att denna lämnas satt till "Nej" för andra kontexter än mgr, där den är satt till "Ja" som standard.';
 
+$_lang['setting_allow_tv_eval'] = 'Inaktivera eval i TV-koppling';
+$_lang['setting_allow_tv_eval_desc'] = 'Välj detta alternativ för att aktivera eller inaktivera eval i TV-kopplingar. Om det här alternativet sätts till Nej, kommer koden/värdet bara hanteras som vanlig text.';
+
 $_lang['setting_anonymous_sessions'] = 'Anonyma sessioner';
-$_lang['setting_anonymous_sessions'] = 'Anonyma sessioner';
+$_lang['setting_anonymous_sessions_desc'] = 'Om denna inaktiveras så kommer bara autentiserade användare att ha tillgång till en PHP-session. Det här kan reducera overheaden för anonyma användare och deras belastning på webbplatsen om de inte behöver tillgång till en unik session. Om session_enabled är inaktiverad har denna inställning ingen effekt eftersom sessioner inte är tillgängliga.';
 
 $_lang['setting_archive_with'] = 'Tvinga användning av PCLZip-arkiv';
 $_lang['setting_archive_with_desc'] = 'Om denna sätts till "Ja" kommer PCLZip att användas för zip-filer istället för ZipArchive. Aktivera den här om du får extractTo-fel eller har problem med uppackning i pakethanteraren.';
@@ -127,6 +130,9 @@ $_lang['setting_cache_action_map_desc'] = 'När denna är aktiverad kommer händ
 
 $_lang['setting_cache_alias_map'] = 'Aktivera cachning av kontexts aliaskarta';
 $_lang['setting_cache_alias_map_desc'] = 'När denna är aktiverad cachas alla resurs-URI:er till kontexten. Aktivera på mindre webbplatser och inaktivera på större webbplatser för bättre prestande.';
+
+$_lang['setting_use_context_resource_table'] = 'Använd resurstabellen för kontexter';
+$_lang['setting_use_context_resource_table_desc'] = 'När denna är aktiverad kommer uppdateringar av kontexter att använda tabellen context_resource. Det här gör att du programmässigt kan ha en resurs i flera kontexter. Om du inte använder dessa resurskontexter via API:n så kan du sätta den här till false. På stora webbplatser kan du potentiellt få en prestandaökning i hanteraren då.';
 
 $_lang['setting_cache_context_settings'] = 'Aktivera cachning av kontextinställningar';
 $_lang['setting_cache_context_settings_desc'] = 'När denna är aktiverad kommer kontextinställningar att cachas för att minska laddningstider.';
@@ -185,10 +191,10 @@ $_lang['setting_clear_cache_refresh_trees'] = 'Uppdatera träd efter rensning av
 $_lang['setting_clear_cache_refresh_trees_desc'] = 'När den här är aktiverad kommer träden att uppdateras när webbplatsens cache rensas.';
 
 $_lang['setting_compress_css'] = 'Använd komprimerad CSS';
-$_lang['setting_compress_css_desc'] = 'När denna är aktiverad kommer MODX att använda en komprimerad version av sina css-stilmallar i hanterarens gränssnitt. Detta minskar laddnings- och exekveringstiden i hanteraren ordentligt. Avaktivera bara om du modifierar element i kärnan.';
+$_lang['setting_compress_css_desc'] = 'När denna är aktiverad kommer MODX att använda en komprimerad version av sina CSS-stilmallar i hanterarens gränssnitt.';
 
 $_lang['setting_compress_js'] = 'Använd komprimerade javascript-bibliotek';
-$_lang['setting_compress_js_desc'] = 'När denna är aktiverad kommer MODX att använda en komprimerad version av sina javascript-bibliotek i hanterarens gränssnitt. Detta minskar laddnings- och exekveringstiden i hanteraren ordentligt. Avaktivera bara om du modifierar element i kärnan.';
+$_lang['setting_compress_js_desc'] = 'När denna är aktiverad kommer MODX att använda en komprimerad version av skriptfilerna.';
 
 $_lang['setting_compress_js_groups'] = 'Använd gruppering när javascript komprimeras';
 $_lang['setting_compress_js_groups_desc'] = 'Gruppera javascript för MODX hanterares kärna genom att använda groupsConfig i Minify. Sätt till "Ja" om du använder Suhosin eller andra begränsande faktorer.';
@@ -423,9 +429,6 @@ $_lang['setting_manager_date_format_desc'] = 'Formateringssträngen, i PHP:s dat
 $_lang['setting_manager_favicon_url'] = 'URL för hanterarens favicon';
 $_lang['setting_manager_favicon_url_desc'] = 'Om du anger en URL här kommer den att laddas som hanteraren favicon. Måste vara en relativ URL i förhållande till katalogen /manager eller en absolut URL.';
 
-$_lang['setting_manager_html5_cache'] = 'Använd HTML5:s lokala cache i hanteraren';
-$_lang['setting_manager_html5_cache_desc'] = 'Experimentell. Använd HTML5:s lokala cache i hanteraren. Rekommenderas endast om hanteraren används i moderna webbläsare.';
-
 $_lang['setting_manager_js_cache_file_locking'] = 'Aktivera fillåsning för hanterarens JS/CSS-cache';
 $_lang['setting_manager_js_cache_file_locking_desc'] = 'Fillåsning för cachen. Sätt till "Nej" om filsystemet är NFS.';
 $_lang['setting_manager_js_cache_max_age'] = 'Livslängd för hanterarens cachning av komprimerad JS/CSS';
@@ -497,6 +500,9 @@ $_lang['setting_password_generated_length_desc'] = 'Längden på ett automatgene
 
 $_lang['setting_password_min_length'] = 'Minimal längd för lösenord';
 $_lang['setting_password_min_length_desc'] = 'Den minimala längden på en användares lösenord.';
+
+$_lang['setting_preserve_menuindex'] = 'Bevara menyindex när resurser dupliceras';
+$_lang['setting_preserve_menuindex_desc'] = 'När resurser dupliceras kommer menyindexet/ordningen att bevaras.';
 
 $_lang['setting_principal_targets'] = 'ACL-mål att ladda';
 $_lang['setting_principal_targets_desc'] = 'Anpassa ACL-målen som ska laddas för MODX-användare.';
@@ -810,3 +816,6 @@ $_lang['setting_default_username_desc'] = 'Användarnamn för en oautentiserad a
 
 $_lang['setting_manager_use_fullname'] = 'Visa fullständigt namn i hanterarens sidhuvud ';
 $_lang['setting_manager_use_fullname_desc'] = 'Om denna sätts till "Ja" kommer användarens fullständiga namn att visas i hanteraren istället för användarnamnet.';
+
+$_lang['log_snippet_not_found'] = 'Logga snippets som inte hittas';
+$_lang['log_snippet_not_found_desc'] = 'Om satt till Ja kommer snippets som anropas, men inte hittas att loggas till felloggen.';

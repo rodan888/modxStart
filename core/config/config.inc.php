@@ -15,12 +15,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1466773012;
+$lastInstallTime = 1539594766;
 
-$site_id = 'modx576d2e1416c5e5.14484273';
+$site_id = 'modx5bc45a0e3165d5.44435369';
 $site_sessionname = 'SN576d2dcd04026';
 $https_port = '443';
-$uuid = '422c53c9-398f-4437-9c4e-f9ddf67668fd';
+$uuid = '46466e69-dcfc-4ab3-b80b-28b385342367';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= 'C:/OpenServer/domains/ModxStart/core/';
@@ -62,7 +62,7 @@ if (!defined('MODX_HTTP_HOST')) {
         $http_host='modxstart';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'modxstart';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? htmlspecialchars($_SERVER['HTTP_HOST'], ENT_QUOTES) : 'modxstart';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }

@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'be791f88f6ac9c5662a9e2b584ac45b2',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => 'a277e4e2dbc2122e3e0f31a3365839db',
+  'native_key' => 'OnFileManagerBeforeUpload',
+  'object' => '{"name":"OnFileManagerBeforeUpload","service":1,"groupname":"System"}',
+);

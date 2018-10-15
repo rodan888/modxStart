@@ -80,7 +80,7 @@ abstract class xPDOQuery extends xPDOCriteria {
         'MIN(',
         'AVG('
     );
-    protected $_quotable= array ('string', 'password', 'date', 'datetime', 'timestamp', 'time');
+    protected $_quotable= array ('string', 'password', 'date', 'datetime', 'timestamp', 'time', 'json', 'array');
     protected $_class= null;
     protected $_alias= null;
     protected $_tableClass = null;
@@ -101,6 +101,22 @@ abstract class xPDOQuery extends xPDOCriteria {
         'offset' => '',
         'limit' => '',
     );
+
+    /**
+     * Make sure a clause is valid and does not contain SQL injection attempts.
+     *
+     * @param string $clause The string clause to validate.
+     *
+     * @return bool True if the clause is valid.
+     */
+    public static function isValidClause($clause) {
+        $output = rtrim($clause, ' ;');
+        $output = preg_replace("/\\\\'.*?\\\\'/", '{mask}', $output);
+        $output = preg_replace('/\\".*?\\"/', '{mask}', $output);
+        $output = preg_replace("/'.*?'/", '{mask}', $output);
+        $output = preg_replace('/".*?"/', '{mask}', $output);
+        return strpos($output, ';') === false && strpos(strtolower($output), 'union') === false;
+    }
 
     public function __construct(& $xpdo, $class, $criteria= null) {
         parent :: __construct($xpdo);
@@ -218,8 +234,7 @@ abstract class xPDOQuery extends xPDOCriteria {
     public function set(array $values) {
         $fieldMeta= $this->xpdo->getFieldMeta($this->_class);
         $fieldAliases= $this->xpdo->getFieldAliases($this->_class);
-        reset($values);
-        while (list($key, $value) = each($values)) {
+        foreach ($values as $key => $value) {
             $type= null;
             if (!array_key_exists($key, $fieldMeta)) {
                 if (array_key_exists($key, $fieldAliases)) {
@@ -399,7 +414,16 @@ abstract class xPDOQuery extends xPDOCriteria {
      * @return xPDOQuery Returns the instance.
      */
     public function sortby($column, $direction= 'ASC') {
-        $this->query['sortby'][]= array ('column' => $column, 'direction' => $direction);
+        /* The direction can only be ASC or DESC; anything else is bogus */
+        if (!in_array(strtoupper($direction), array('ASC', 'DESC', 'ASCENDING', 'DESCENDING'), true)) {
+            $direction = '';
+        }
+
+        if (!static::isValidClause($column)) {
+            $this->xpdo->log(xPDO::LOG_LEVEL_ERROR, 'SQL injection attempt detected in sortby column; clause rejected');
+        } elseif (!empty($column)) {
+            $this->query['sortby'][] = array('column' => $column, 'direction' => $direction);
+        }
         return $this;
     }
 
@@ -433,8 +457,8 @@ abstract class xPDOQuery extends xPDOCriteria {
      * @return xPDOQuery Returns the instance.
      */
     public function limit($limit, $offset= 0) {
-        $this->query['limit']= $limit;
-        $this->query['offset']= $offset;
+        $this->query['limit']= (int)$limit;
+        $this->query['offset']= (int)$offset;
         return $this;
     }
 
@@ -595,8 +619,8 @@ abstract class xPDOQuery extends xPDOCriteria {
                 }
             }
         }
-        if (!empty ($relations) && is_object($relObj)) {
-            while (list($relationAlias, $subRelations)= each($relations)) {
+        if (!empty($relations) && is_object($relObj)) {
+            foreach ($relations as $relationAlias => $subRelations) {
                 if (is_array($subRelations) && !empty($subRelations)) {
                     foreach ($subRelations as $subRelation) {
                         $this->hydrateGraphNode($row, $relObj, $relationAlias, $subRelation);
@@ -624,6 +648,8 @@ abstract class xPDOQuery extends xPDOCriteria {
         $this->stmt= null;
         if ($this->construct() && $this->stmt= $this->xpdo->prepare($this->sql)) {
             $this->bind($bindings, $byValue, $cacheFlag);
+        } else {
+            $this->xpdo->log(xPDO::LOG_LEVEL_ERROR, 'Could not construct or prepare query because it is invalid or could not connect: ' . $this->sql);
         }
         return $this->stmt;
     }
@@ -664,8 +690,7 @@ abstract class xPDOQuery extends xPDOCriteria {
                     $iteration++;
                 }
             } else {
-                reset($conditions);
-                while (list ($key, $val)= each($conditions)) {
+                foreach ($conditions as $key => $val) {
                     if (is_int($key)) {
                         if (is_array($val)) {
                             $result[]= $this->parseConditions($val, $conjunction);
@@ -766,7 +791,7 @@ abstract class xPDOQuery extends xPDOCriteria {
                 ,'conjunction' => $conjunction
             ));
         }
-        elseif (($pktype == 'integer' && is_numeric($conditions)) || ($pktype == 'string' && is_string($conditions) && $this->isValidClause($conditions))) {
+        elseif (($pktype == 'integer' && is_numeric($conditions)) || ($pktype == 'string' && is_string($conditions) && static::isValidClause($conditions))) {
             if ($pktype == 'integer') {
                 $param_type= PDO::PARAM_INT;
             } else {
@@ -784,12 +809,14 @@ abstract class xPDOQuery extends xPDOCriteria {
      * Determines if a string contains a conditional operator.
      *
      * @param string $string The string to evaluate.
-     * @return boolean True if the string is a complete conditional SQL clause.
+     *
+     * @return bool True if the string is a complete conditional SQL clause.
+     * @throws xPDOException If a SQL injection attempt is detected.
      */
     public function isConditionalClause($string) {
         $matched= false;
         if (is_string($string)) {
-            if (!$this->isValidClause($string)) {
+            if (!static::isValidClause($string)) {
                 throw new xPDOException("SQL injection attempt detected: {$string}");
             }
             foreach ($this->_operators as $operator) {
@@ -800,15 +827,6 @@ abstract class xPDOQuery extends xPDOCriteria {
             }
         }
         return $matched;
-    }
-
-    protected function isValidClause($clause) {
-        $output = rtrim($clause, ' ;');
-        $output = preg_replace("/\\\\'.*?\\\\'/", '{mask}', $output);
-        $output = preg_replace('/\\".*?\\"/', '{mask}', $output);
-        $output = preg_replace("/'.*?'/", '{mask}', $output);
-        $output = preg_replace('/".*?"/', '{mask}', $output);
-        return strpos($output, ';') === false && strpos(strtolower($output), 'union ') === false;
     }
 
     /**

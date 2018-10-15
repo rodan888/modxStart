@@ -95,8 +95,11 @@ $_lang['setting_allow_manager_login_forgot_password_desc'] = '「いいえ」に
 $_lang['setting_allow_tags_in_post'] = 'POSTアクションでタグの受け渡しを許可';
 $_lang['setting_allow_tags_in_post_desc'] = '無効とすると、すべてのPOSTリクエストで、MODXタグ、数値実体参照、またはHTMLのscriptタグが取り除かれます。デフォルトでこの設定が有効な管理画面用コンテキスト`mgr`以外では、無効とすることを推奨します。';
 
+$_lang['setting_allow_tv_eval'] = 'Disable eval in TV binding';
+$_lang['setting_allow_tv_eval_desc'] = 'Select this option to enable or disable eval in TV binding. If this option is set to no, the code/value will just be handled as regular text.';
+
 $_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
-$_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
+$_lang['setting_anonymous_sessions_desc'] = 'If disabled, only authenticated users will have access to a PHP session. This can reduce overhead for anonymous users and the load they impose on a MODX site if they do not need access to a unique session. If session_enabled is false, this setting has no effect as sessions would never be available.';
 
 $_lang['setting_archive_with'] = '強制的にPCLZipを使用';
 $_lang['setting_archive_with_desc'] = 'この設定が有効の場合、zipアーカイブに対して、ZipArchiveの代わりにPCLZipを使用します。<br />この設定は、ZipArchiveのextractToエラー時、またはパッケージの展開に問題がある場合に有効にしてください。';
@@ -127,6 +130,9 @@ $_lang['setting_cache_action_map_desc'] = '「はい」を選択すると、ア�
 
 $_lang['setting_cache_alias_map'] = 'コンテキストのエイリアスマップキャッシュを有効';
 $_lang['setting_cache_alias_map_desc'] = '有効にすると、すべてのリソースのURIは、コンテキストにキャッシュされます。小規模なサイトで有効にして、パフォーマンスを向上させるために大規模なサイトでは無効にします。';
+
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'コンテキスト設定キャッシュを有効';
 $_lang['setting_cache_context_settings_desc'] = '「はい」を選択すると、コンテキストの設定をキャッシュして、読み込み時間を減らします。';
@@ -423,9 +429,6 @@ $_lang['setting_manager_date_format_desc'] = '管理画面内で用いる日付�
 $_lang['setting_manager_favicon_url'] = '管理画面のfavicon URL';
 $_lang['setting_manager_favicon_url_desc'] = '設定したURLの画像が、管理画面のfaviconとして使用されます。値はmanagerディレクトリに対する相対URLか、絶対URLで指定する必要があります。';
 
-$_lang['setting_manager_html5_cache'] = '管理画面でHTML5のアプリケーションキャッシュを使用';
-$_lang['setting_manager_html5_cache_desc'] = '管理画面で、HTML5で採用されるアプリケーションキャッシュを使用します。この機能はモダンブラウザでのみサポートされます。';
-
 $_lang['setting_manager_js_cache_file_locking'] = '管理画面用JS/CSS キャッシュファイルのロックを有効化';
 $_lang['setting_manager_js_cache_file_locking_desc'] = 'キャッシュファイルをロックします。ファイルシステムにNFSを使用している場合、この設定は「いいえ」を指定してください。';
 $_lang['setting_manager_js_cache_max_age'] = '管理画面のJS/CSS圧縮 キャッシュ有効期間';
@@ -497,6 +500,9 @@ $_lang['setting_password_generated_length_desc'] = 'ユーザー用に自動生�
 
 $_lang['setting_password_min_length'] = 'パスワードの最小の長さ';
 $_lang['setting_password_min_length_desc'] = 'ユーザー用パスワードの最小の長さ。';
+
+$_lang['setting_preserve_menuindex'] = 'Preserve Menu Index When Duplicating Resources';
+$_lang['setting_preserve_menuindex_desc'] = 'When duplicating Resources, the menu index order will also be preserved.';
 
 $_lang['setting_principal_targets'] = 'ロードするACLターゲット';
 $_lang['setting_principal_targets_desc'] = 'MODxユーザがロードするACLターゲットをカスタマイズします。';
@@ -810,3 +816,6 @@ $_lang['setting_default_username_desc'] = 'Default username for an unauthenticat
 
 $_lang['setting_manager_use_fullname'] = 'Show fullname in manager header ';
 $_lang['setting_manager_use_fullname_desc'] = 'If set to yes, the content of the "fullname" field will be shown in manager instead of "loginname"';
+
+$_lang['log_snippet_not_found'] = 'Log snippets not found';
+$_lang['log_snippet_not_found_desc'] = 'If set to yes, snippets that are called but not found will be logged to the error log.';

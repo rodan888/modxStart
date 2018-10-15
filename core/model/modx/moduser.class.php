@@ -367,8 +367,10 @@ class modUser extends modPrincipal {
                 }
             }
             $this->sessionContexts[$context]= $this->get('id');
+
             $_SESSION['modx.user.contextTokens']= $this->sessionContexts;
-            if (!isset($_SESSION["modx.{$context}.user.token"])) {
+
+            if (!isset($_SESSION["modx.{$context}.user.token"]) || empty($_SESSION["modx.{$context}.user.token"])) {
                 $_SESSION["modx.{$context}.user.token"]= $this->generateToken($context);
             }
         } else {
@@ -679,7 +681,7 @@ class modUser extends modPrincipal {
             $rolePk = is_string($roleId) ? array('name' => $roleId) : $roleId;
             $role = $this->xpdo->getObject('modUserGroupRole',$rolePk);
             if (empty($role)) {
-                $this->xpdo->log(xPDO::LOG_LEVEL_ERROR,'Role not found with key: '.$role);
+                $this->xpdo->log(xPDO::LOG_LEVEL_ERROR, 'Role not found with key: ' . $roleId);
                 return $joined;
             }
         }

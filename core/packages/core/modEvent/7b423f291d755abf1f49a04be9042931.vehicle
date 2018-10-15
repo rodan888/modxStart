@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '460e560cb5f25a5a2d761af53fef52e5',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '7b423f291d755abf1f49a04be9042931',
+  'native_key' => 'OnUserDeactivate',
+  'object' => '{"name":"OnUserDeactivate","service":1,"groupname":"Users"}',
+);

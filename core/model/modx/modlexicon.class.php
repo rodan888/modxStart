@@ -6,7 +6,7 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- * 
+ *
  * @package modx
  */
 /**
@@ -336,6 +336,23 @@ class modLexicon {
                 }
             }
         }
+
+        $c = $this->modx->newQuery('modLexiconEntry');
+        $c->where(array(
+            'namespace' => $namespace,
+            'topic:NOT IN' => $topics,
+        ));
+        $c->select(array('topic'));
+        $c->query['distinct'] = 'DISTINCT';
+        if ($c->prepare() && $c->stmt->execute()) {
+            $entries = $c->stmt->fetchAll(\PDO::FETCH_ASSOC);
+            if (is_array($entries) and count($entries) > 0) {
+                foreach ($entries as $v) {
+                    $topics[] = $v['topic'];
+                }
+            }
+        }
+
         sort($topics);
         return $topics;
     }
@@ -349,6 +366,9 @@ class modLexicon {
     public function getLanguageList($namespace = 'core') {
         $corePath = $this->getNamespacePath($namespace);
         $lexPath = str_replace('//','/',$corePath.'/lexicon/');
+        if (!is_dir($lexPath)) {
+            return array();
+        }
         $languages = array();
         /** @var DirectoryIterator $language */
         foreach (new DirectoryIterator($lexPath) as $language) {
@@ -359,6 +379,23 @@ class modLexicon {
                 $languages[] = $language->getFilename();
             }
         }
+
+        $c = $this->modx->newQuery('modLexiconEntry');
+        $c->where(array(
+            'namespace' => $namespace,
+            'language:NOT IN' => $languages,
+        ));
+        $c->select(array('language'));
+        $c->query['distinct'] = 'DISTINCT';
+        if ($c->prepare() && $c->stmt->execute()) {
+            $entries = $c->stmt->fetchAll(\PDO::FETCH_ASSOC);
+            if (is_array($entries) and count($entries) > 0) {
+                foreach ($entries as $v) {
+                    $languages[] = $v['language'];
+                }
+            }
+        }
+
         sort($languages);
         return $languages;
     }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 01 2016 г., 21:37
+-- Время создания: Окт 15 2018 г., 13:28
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.3.29
 
@@ -504,15 +504,15 @@ CREATE TABLE IF NOT EXISTS `modx_access_policies` (
 
 INSERT INTO `modx_access_policies` (`id`, `name`, `description`, `parent`, `template`, `class`, `data`, `lexicon`) VALUES
 (1, 'Resource', 'MODX Resource Policy with all attributes.', 0, 2, '', '{"add_children":true,"create":true,"copy":true,"delete":true,"list":true,"load":true,"move":true,"publish":true,"remove":true,"save":true,"steal_lock":true,"undelete":true,"unpublish":true,"view":true}', 'permissions'),
-(2, 'Administrator', 'Context administration policy with all permissions.', 0, 1, '', '{"about":true,"access_permissions":true,"actions":true,"change_password":true,"change_profile":true,"charsets":true,"class_map":true,"components":true,"content_types":true,"countries":true,"create":true,"credits":true,"customize_forms":true,"dashboards":true,"database":true,"database_truncate":true,"delete_category":true,"delete_chunk":true,"delete_context":true,"delete_document":true,"delete_eventlog":true,"delete_plugin":true,"delete_propertyset":true,"delete_role":true,"delete_snippet":true,"delete_template":true,"delete_tv":true,"delete_user":true,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":true,"edit_chunk":true,"edit_context":true,"edit_document":true,"edit_locked":true,"edit_plugin":true,"edit_propertyset":true,"edit_role":true,"edit_snippet":true,"edit_template":true,"edit_tv":true,"edit_user":true,"element_tree":true,"empty_cache":true,"error_log_erase":true,"error_log_view":true,"export_static":true,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_update":true,"file_upload":true,"file_unpack":true,"file_view":true,"flush_sessions":true,"frames":true,"help":true,"home":true,"import_static":true,"languages":true,"lexicons":true,"list":true,"load":true,"logout":true,"logs":true,"menus":true,"menu_reports":true,"menu_security":true,"menu_site":true,"menu_support":true,"menu_system":true,"menu_tools":true,"menu_user":true,"messages":true,"namespaces":true,"new_category":true,"new_chunk":true,"new_context":true,"new_document":true,"new_document_in_root":true,"new_plugin":true,"new_propertyset":true,"new_role":true,"new_snippet":true,"new_static_resource":true,"new_symlink":true,"new_template":true,"new_tv":true,"new_user":true,"new_weblink":true,"packages":true,"policy_delete":true,"policy_edit":true,"policy_new":true,"policy_save":true,"policy_template_delete":true,"policy_template_edit":true,"policy_template_new":true,"policy_template_save":true,"policy_template_view":true,"policy_view":true,"property_sets":true,"providers":true,"publish_document":true,"purge_deleted":true,"remove":true,"remove_locks":true,"resource_duplicate":true,"resourcegroup_delete":true,"resourcegroup_edit":true,"resourcegroup_new":true,"resourcegroup_resource_edit":true,"resourcegroup_resource_list":true,"resourcegroup_save":true,"resourcegroup_view":true,"resource_quick_create":true,"resource_quick_update":true,"resource_tree":true,"save":true,"save_category":true,"save_chunk":true,"save_context":true,"save_document":true,"save_plugin":true,"save_propertyset":true,"save_role":true,"save_snippet":true,"save_template":true,"save_tv":true,"save_user":true,"search":true,"settings":true,"sources":true,"source_delete":true,"source_edit":true,"source_save":true,"source_view":true,"steal_locks":true,"tree_show_element_ids":true,"tree_show_resource_ids":true,"undelete_document":true,"unlock_element_properties":true,"unpublish_document":true,"usergroup_delete":true,"usergroup_edit":true,"usergroup_new":true,"usergroup_save":true,"usergroup_user_edit":true,"usergroup_user_list":true,"usergroup_view":true,"view":true,"view_category":true,"view_chunk":true,"view_context":true,"view_document":true,"view_element":true,"view_eventlog":true,"view_offline":true,"view_plugin":true,"view_propertyset":true,"view_role":true,"view_snippet":true,"view_sysinfo":true,"view_template":true,"view_tv":true,"view_unpublished":true,"view_user":true,"workspaces":true}', 'permissions'),
+(2, 'Administrator', 'Context administration policy with all permissions.', 0, 1, '', '{"about":true,"access_permissions":true,"actions":true,"change_password":true,"change_profile":true,"charsets":true,"class_map":true,"components":true,"content_types":true,"countries":true,"create":true,"credits":true,"customize_forms":true,"dashboards":true,"database":true,"database_truncate":true,"delete_category":true,"delete_chunk":true,"delete_context":true,"delete_document":true,"delete_eventlog":true,"delete_plugin":true,"delete_propertyset":true,"delete_role":true,"delete_snippet":true,"delete_template":true,"delete_tv":true,"delete_user":true,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":true,"edit_chunk":true,"edit_context":true,"edit_document":true,"edit_locked":true,"edit_plugin":true,"edit_propertyset":true,"edit_role":true,"edit_snippet":true,"edit_template":true,"edit_tv":true,"edit_user":true,"element_tree":true,"empty_cache":true,"error_log_erase":true,"error_log_view":true,"events":true,"export_static":true,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_update":true,"file_upload":true,"file_unpack":true,"file_view":true,"flush_sessions":true,"frames":true,"help":true,"home":true,"import_static":true,"languages":true,"lexicons":true,"list":true,"load":true,"logout":true,"logs":true,"menus":true,"menu_reports":true,"menu_security":true,"menu_site":true,"menu_support":true,"menu_system":true,"menu_tools":true,"menu_user":true,"messages":true,"namespaces":true,"new_category":true,"new_chunk":true,"new_context":true,"new_document":true,"new_document_in_root":true,"new_plugin":true,"new_propertyset":true,"new_role":true,"new_snippet":true,"new_static_resource":true,"new_symlink":true,"new_template":true,"new_tv":true,"new_user":true,"new_weblink":true,"packages":true,"policy_delete":true,"policy_edit":true,"policy_new":true,"policy_save":true,"policy_template_delete":true,"policy_template_edit":true,"policy_template_new":true,"policy_template_save":true,"policy_template_view":true,"policy_view":true,"property_sets":true,"providers":true,"publish_document":true,"purge_deleted":true,"remove":true,"remove_locks":true,"resource_duplicate":true,"resourcegroup_delete":true,"resourcegroup_edit":true,"resourcegroup_new":true,"resourcegroup_resource_edit":true,"resourcegroup_resource_list":true,"resourcegroup_save":true,"resourcegroup_view":true,"resource_quick_create":true,"resource_quick_update":true,"resource_tree":true,"save":true,"save_category":true,"save_chunk":true,"save_context":true,"save_document":true,"save_plugin":true,"save_propertyset":true,"save_role":true,"save_snippet":true,"save_template":true,"save_tv":true,"save_user":true,"search":true,"settings":true,"sources":true,"source_delete":true,"source_edit":true,"source_save":true,"source_view":true,"steal_locks":true,"tree_show_element_ids":true,"tree_show_resource_ids":true,"undelete_document":true,"unlock_element_properties":true,"unpublish_document":true,"usergroup_delete":true,"usergroup_edit":true,"usergroup_new":true,"usergroup_save":true,"usergroup_user_edit":true,"usergroup_user_list":true,"usergroup_view":true,"view":true,"view_category":true,"view_chunk":true,"view_context":true,"view_document":true,"view_element":true,"view_eventlog":true,"view_offline":true,"view_plugin":true,"view_propertyset":true,"view_role":true,"view_snippet":true,"view_sysinfo":true,"view_template":true,"view_tv":true,"view_unpublished":true,"view_user":true,"workspaces":true}', 'permissions'),
 (3, 'Load Only', 'A minimal policy with permission to load an object.', 0, 3, '', '{"load":true}', 'permissions'),
 (4, 'Load, List and View', 'Provides load, list and view permissions only.', 0, 3, '', '{"load":true,"list":true,"view":true}', 'permissions'),
 (5, 'Object', 'An Object policy with all permissions.', 0, 3, '', '{"load":true,"list":true,"view":true,"save":true,"remove":true}', 'permissions'),
 (6, 'Element', 'MODX Element policy with all attributes.', 0, 4, '', '{"add_children":true,"create":true,"delete":true,"list":true,"load":true,"remove":true,"save":true,"view":true,"copy":true}', 'permissions'),
-(7, 'Content Editor', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{"change_profile":true,"class_map":true,"countries":true,"edit_document":true,"frames":true,"help":true,"home":true,"load":true,"list":true,"logout":true,"menu_reports":true,"menu_site":true,"menu_support":true,"menu_tools":true,"menu_user":true,"resource_duplicate":true,"resource_tree":true,"save_document":true,"source_view":true,"tree_show_resource_ids":true,"view":true,"view_document":true,"new_document":true,"delete_document":true}', 'permissions'),
+(7, 'Content Editor', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{"change_profile":true,"class_map":true,"countries":true,"edit_document":true,"frames":true,"help":true,"home":true,"load":true,"list":true,"logout":true,"menu_reports":true,"menu_site":true,"menu_support":true,"menu_tools":true,"menu_user":true,"resource_duplicate":true,"resource_tree":true,"save_document":true,"source_view":true,"tree_show_resource_ids":true,"view":true,"view_document":true,"view_template":true,"new_document":true,"delete_document":true}', 'permissions'),
 (8, 'Media Source Admin', 'Media Source administration policy.', 0, 5, '', '{"create":true,"copy":true,"load":true,"list":true,"save":true,"remove":true,"view":true}', 'permissions'),
 (9, 'Media Source User', 'Media Source user policy, with basic viewing and using - but no editing - of Media Sources.', 0, 5, '', '{"load":true,"list":true,"view":true}', 'permissions'),
-(10, 'Developer', 'Context administration policy with most Permissions except Administrator and Security functions.', 0, 0, '', '{"about":true,"change_password":true,"change_profile":true,"charsets":true,"class_map":true,"components":true,"content_types":true,"countries":true,"create":true,"credits":true,"customize_forms":true,"dashboards":true,"database":true,"delete_category":true,"delete_chunk":true,"delete_context":true,"delete_document":true,"delete_eventlog":true,"delete_plugin":true,"delete_propertyset":true,"delete_snippet":true,"delete_template":true,"delete_tv":true,"delete_role":true,"delete_user":true,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":true,"edit_chunk":true,"edit_context":true,"edit_document":true,"edit_locked":true,"edit_plugin":true,"edit_propertyset":true,"edit_role":true,"edit_snippet":true,"edit_template":true,"edit_tv":true,"edit_user":true,"element_tree":true,"empty_cache":true,"error_log_erase":true,"error_log_view":true,"export_static":true,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_update":true,"file_upload":true,"file_unpack":true,"file_view":true,"frames":true,"help":true,"home":true,"import_static":true,"languages":true,"lexicons":true,"list":true,"load":true,"logout":true,"logs":true,"menu_reports":true,"menu_site":true,"menu_support":true,"menu_system":true,"menu_tools":true,"menu_user":true,"menus":true,"messages":true,"namespaces":true,"new_category":true,"new_chunk":true,"new_context":true,"new_document":true,"new_static_resource":true,"new_symlink":true,"new_weblink":true,"new_document_in_root":true,"new_plugin":true,"new_propertyset":true,"new_role":true,"new_snippet":true,"new_template":true,"new_tv":true,"new_user":true,"packages":true,"property_sets":true,"providers":true,"publish_document":true,"purge_deleted":true,"remove":true,"resource_duplicate":true,"resource_quick_create":true,"resource_quick_update":true,"resource_tree":true,"save":true,"save_category":true,"save_chunk":true,"save_context":true,"save_document":true,"save_plugin":true,"save_propertyset":true,"save_snippet":true,"save_template":true,"save_tv":true,"save_user":true,"search":true,"settings":true,"source_delete":true,"source_edit":true,"source_save":true,"source_view":true,"sources":true,"tree_show_element_ids":true,"tree_show_resource_ids":true,"undelete_document":true,"unpublish_document":true,"unlock_element_properties":true,"view":true,"view_category":true,"view_chunk":true,"view_context":true,"view_document":true,"view_element":true,"view_eventlog":true,"view_offline":true,"view_plugin":true,"view_propertyset":true,"view_role":true,"view_snippet":true,"view_sysinfo":true,"view_template":true,"view_tv":true,"view_user":true,"view_unpublished":true,"workspaces":true}', 'permissions'),
+(10, 'Developer', 'Context administration policy with most Permissions except Administrator and Security functions.', 0, 1, '', '{"about":true,"change_password":true,"change_profile":true,"charsets":true,"class_map":true,"components":true,"content_types":true,"countries":true,"create":true,"credits":true,"customize_forms":true,"dashboards":true,"database":true,"delete_category":true,"delete_chunk":true,"delete_context":true,"delete_document":true,"delete_eventlog":true,"delete_plugin":true,"delete_propertyset":true,"delete_snippet":true,"delete_template":true,"delete_tv":true,"delete_role":true,"delete_user":true,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":true,"edit_chunk":true,"edit_context":true,"edit_document":true,"edit_locked":true,"edit_plugin":true,"edit_propertyset":true,"edit_role":true,"edit_snippet":true,"edit_template":true,"edit_tv":true,"edit_user":true,"element_tree":true,"empty_cache":true,"error_log_erase":true,"error_log_view":true,"export_static":true,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_update":true,"file_upload":true,"file_unpack":true,"file_view":true,"frames":true,"help":true,"home":true,"import_static":true,"languages":true,"lexicons":true,"list":true,"load":true,"logout":true,"logs":true,"menu_reports":true,"menu_site":true,"menu_support":true,"menu_system":true,"menu_tools":true,"menu_user":true,"menus":true,"messages":true,"namespaces":true,"new_category":true,"new_chunk":true,"new_context":true,"new_document":true,"new_static_resource":true,"new_symlink":true,"new_weblink":true,"new_document_in_root":true,"new_plugin":true,"new_propertyset":true,"new_role":true,"new_snippet":true,"new_template":true,"new_tv":true,"new_user":true,"packages":true,"property_sets":true,"providers":true,"publish_document":true,"purge_deleted":true,"remove":true,"resource_duplicate":true,"resource_quick_create":true,"resource_quick_update":true,"resource_tree":true,"save":true,"save_category":true,"save_chunk":true,"save_context":true,"save_document":true,"save_plugin":true,"save_propertyset":true,"save_snippet":true,"save_template":true,"save_tv":true,"save_user":true,"search":true,"settings":true,"source_delete":true,"source_edit":true,"source_save":true,"source_view":true,"sources":true,"tree_show_element_ids":true,"tree_show_resource_ids":true,"undelete_document":true,"unpublish_document":true,"unlock_element_properties":true,"view":true,"view_category":true,"view_chunk":true,"view_context":true,"view_document":true,"view_element":true,"view_eventlog":true,"view_offline":true,"view_plugin":true,"view_propertyset":true,"view_role":true,"view_snippet":true,"view_sysinfo":true,"view_template":true,"view_tv":true,"view_user":true,"view_unpublished":true,"workspaces":true}', 'permissions'),
 (11, 'Context', 'A standard Context policy that you can apply when creating Context ACLs for basic read/write and view_unpublished access within a Context.', 0, 6, '', '{"load":true,"list":true,"view":true,"save":true,"remove":true,"copy":true,"view_unpublished":true}', 'permissions'),
 (12, 'Hidden Namespace', 'Hidden Namespace policy, will not show Namespace in lists.', 0, 7, '', '{"load":false,"list":false,"view":true}', 'permissions'),
 (13, 'TicketUserPolicy', 'A policy for create and update Tickets.', 0, 8, '', '{"ticket_delete":true,"ticket_publish":true,"ticket_save":true,"ticket_vote":true,"ticket_star":true,"comment_save":true,"comment_delete":true,"comment_remove":true,"comment_publish":true,"comment_vote":true,"comment_star":true,"ticket_file_upload":true,"ticket_file_delete":true,"thread_close":true,"thread_delete":true,"thread_remove":true}', 'tickets:permissions'),
@@ -732,127 +732,89 @@ CREATE TABLE IF NOT EXISTS `modx_actions_fields` (
   KEY `action` (`action`),
   KEY `type` (`type`),
   KEY `tab` (`tab`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=191 ;
 
 --
 -- Дамп данных таблицы `modx_actions_fields`
 --
 
 INSERT INTO `modx_actions_fields` (`id`, `action`, `name`, `type`, `tab`, `form`, `other`, `rank`) VALUES
-(1, 'resource/update', 'modx-resource-settings', 'tab', '', 'modx-panel-resource', '', 0),
-(2, 'resource/update', 'modx-resource-main-left', 'tab', '', 'modx-panel-resource', '', 1),
-(3, 'resource/update', 'id', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 0),
-(4, 'resource/update', 'pagetitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 1),
-(5, 'resource/update', 'longtitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 2),
-(6, 'resource/update', 'description', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 3),
-(7, 'resource/update', 'introtext', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 4),
-(8, 'resource/update', 'modx-resource-main-right', 'tab', '', 'modx-panel-resource', '', 2),
-(9, 'resource/update', 'template', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 0),
-(10, 'resource/update', 'alias', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 1),
-(11, 'resource/update', 'menutitle', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 2),
-(12, 'resource/update', 'link_attributes', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 3),
-(13, 'resource/update', 'hidemenu', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 4),
-(14, 'resource/update', 'published', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 5),
-(15, 'resource/update', 'modx-page-settings', 'tab', '', 'modx-panel-resource', '', 3),
-(16, 'resource/update', 'modx-page-settings-left', 'tab', '', 'modx-panel-resource', '', 4),
-(17, 'resource/update', 'parent-cmb', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 0),
-(18, 'resource/update', 'class_key', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 1),
-(19, 'resource/update', 'content_type', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 2),
-(20, 'resource/update', 'content_dispo', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 3),
-(21, 'resource/update', 'menuindex', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 4),
-(22, 'resource/update', 'modx-page-settings-right', 'tab', '', 'modx-panel-resource', '', 5),
-(23, 'resource/update', 'publishedon', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 0),
-(24, 'resource/update', 'pub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 1),
-(25, 'resource/update', 'unpub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 2),
-(26, 'resource/update', 'modx-page-settings-right-box-left', 'tab', '', 'modx-panel-resource', '', 6),
-(27, 'resource/update', 'isfolder', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 0),
-(28, 'resource/update', 'searchable', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 1),
-(29, 'resource/update', 'richtext', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 2),
-(30, 'resource/update', 'uri_override', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 3),
-(31, 'resource/update', 'uri', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 4),
-(32, 'resource/update', 'modx-page-settings-right-box-right', 'tab', '', 'modx-panel-resource', '', 7),
-(33, 'resource/update', 'cacheable', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 0),
-(34, 'resource/update', 'syncsite', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 1),
-(35, 'resource/update', 'deleted', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 2),
-(36, 'resource/update', 'modx-panel-resource-tv', 'tab', '', 'modx-panel-resource', 'tv', 8),
-(37, 'resource/update', 'modx-resource-access-permissions', 'tab', '', 'modx-panel-resource', '', 9),
-(38, 'resource/update', 'modx-resource-content', 'field', 'modx-resource-content', 'modx-panel-resource', '', 0),
-(39, 'resource/create', 'modx-resource-settings', 'tab', '', 'modx-panel-resource', '', 0),
-(40, 'resource/create', 'modx-resource-main-left', 'tab', '', 'modx-panel-resource', '', 1),
-(41, 'resource/create', 'id', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 0),
-(42, 'resource/create', 'pagetitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 1),
-(43, 'resource/create', 'longtitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 2),
-(44, 'resource/create', 'description', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 3),
-(45, 'resource/create', 'introtext', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 4),
-(46, 'resource/create', 'modx-resource-main-right', 'tab', '', 'modx-panel-resource', '', 2),
-(47, 'resource/create', 'template', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 0),
-(48, 'resource/create', 'alias', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 1),
-(49, 'resource/create', 'menutitle', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 2),
-(50, 'resource/create', 'link_attributes', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 3),
-(51, 'resource/create', 'hidemenu', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 4),
-(52, 'resource/create', 'published', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 5),
-(53, 'resource/create', 'modx-page-settings', 'tab', '', 'modx-panel-resource', '', 3),
-(54, 'resource/create', 'modx-page-settings-left', 'tab', '', 'modx-panel-resource', '', 4),
-(55, 'resource/create', 'parent-cmb', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 0),
-(56, 'resource/create', 'class_key', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 1),
-(57, 'resource/create', 'content_type', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 2),
-(58, 'resource/create', 'content_dispo', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 3),
-(59, 'resource/create', 'menuindex', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 4),
-(60, 'resource/create', 'modx-page-settings-right', 'tab', '', 'modx-panel-resource', '', 5),
-(61, 'resource/create', 'publishedon', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 0),
-(62, 'resource/create', 'pub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 1),
-(63, 'resource/create', 'unpub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 2),
-(64, 'resource/create', 'modx-page-settings-right-box-left', 'tab', '', 'modx-panel-resource', '', 6),
-(65, 'resource/create', 'isfolder', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 0),
-(66, 'resource/create', 'searchable', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 1),
-(67, 'resource/create', 'richtext', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 2),
-(68, 'resource/create', 'uri_override', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 3),
-(69, 'resource/create', 'uri', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 4),
-(70, 'resource/create', 'modx-page-settings-right-box-right', 'tab', '', 'modx-panel-resource', '', 7),
-(71, 'resource/create', 'cacheable', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 0),
-(72, 'resource/create', 'syncsite', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 1),
-(73, 'resource/create', 'deleted', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 2),
-(74, 'resource/create', 'modx-panel-resource-tv', 'tab', '', 'modx-panel-resource', 'tv', 8),
-(75, 'resource/create', 'modx-resource-access-permissions', 'tab', '', 'modx-panel-resource', '', 9),
-(76, 'resource/create', 'modx-resource-content', 'field', 'modx-resource-content', 'modx-panel-resource', '', 0),
-(77, 'resource/create', 'tickets-box-publishing-information', 'tab', 'modx-resource-main-right', 'modx-panel-resource', 'tickets', 10),
-(78, 'resource/create', 'publishedon', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 0),
-(79, 'resource/create', 'pub_date', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 1),
-(80, 'resource/create', 'unpub_date', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 2),
-(81, 'resource/create', 'template', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 3),
-(82, 'resource/create', 'modx-resource-createdby', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 4),
-(83, 'resource/create', 'tickets-combo-section', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 5),
-(84, 'resource/create', 'alias', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 6),
-(85, 'resource/create', 'tickets-box-options', 'tab', 'modx-resource-main-right', 'modx-panel-resource', 'tickets', 11),
-(86, 'resource/create', 'searchable', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 0),
-(87, 'resource/create', 'properties[disable_jevix]', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 1),
-(88, 'resource/create', 'cacheable', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 2),
-(89, 'resource/create', 'properties[process_tags]', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 3),
-(90, 'resource/create', 'published', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 4),
-(91, 'resource/create', 'private', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 5),
-(92, 'resource/create', 'richtext', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 6),
-(93, 'resource/create', 'hidemenu', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 7),
-(94, 'resource/create', 'isfolder', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 8),
-(95, 'resource/create', 'modx-tickets-comments', 'tab', '', 'modx-panel-resource', 'tickets', 12),
-(96, 'resource/update', 'tickets-box-publishing-information', 'tab', 'modx-resource-main-right', 'modx-panel-resource', 'tickets', 10),
-(97, 'resource/update', 'publishedon', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 0),
-(98, 'resource/update', 'pub_date', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 1),
-(99, 'resource/update', 'unpub_date', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 2),
-(100, 'resource/update', 'template', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 3),
-(101, 'resource/update', 'modx-resource-createdby', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 4),
-(102, 'resource/update', 'tickets-combo-section', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 5),
-(103, 'resource/update', 'alias', 'field', 'tickets-box-publishing-information', 'modx-panel-resource', 'tickets', 6),
-(104, 'resource/update', 'tickets-box-options', 'tab', 'modx-resource-main-right', 'modx-panel-resource', 'tickets', 11),
-(105, 'resource/update', 'searchable', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 0),
-(106, 'resource/update', 'properties[disable_jevix]', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 1),
-(107, 'resource/update', 'cacheable', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 2),
-(108, 'resource/update', 'properties[process_tags]', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 3),
-(109, 'resource/update', 'published', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 4),
-(110, 'resource/update', 'private', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 5),
-(111, 'resource/update', 'richtext', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 6),
-(112, 'resource/update', 'hidemenu', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 7),
-(113, 'resource/update', 'isfolder', 'field', 'tickets-box-options', 'modx-panel-resource', 'tickets', 8),
-(114, 'resource/update', 'modx-tickets-comments', 'tab', '', 'modx-panel-resource', 'tickets', 12);
+(190, 'resource/create', 'modx-resource-content', 'field', 'modx-resource-content', 'modx-panel-resource', '', 0),
+(189, 'resource/create', 'modx-resource-access-permissions', 'tab', '', 'modx-panel-resource', '', 9),
+(188, 'resource/create', 'modx-panel-resource-tv', 'tab', '', 'modx-panel-resource', 'tv', 8),
+(187, 'resource/create', 'deleted', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 2),
+(186, 'resource/create', 'syncsite', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 1),
+(185, 'resource/create', 'cacheable', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 0),
+(184, 'resource/create', 'modx-page-settings-right-box-right', 'tab', '', 'modx-panel-resource', '', 7),
+(183, 'resource/create', 'uri', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 4),
+(182, 'resource/create', 'uri_override', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 3),
+(181, 'resource/create', 'richtext', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 2),
+(180, 'resource/create', 'searchable', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 1),
+(179, 'resource/create', 'isfolder', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 0),
+(178, 'resource/create', 'modx-page-settings-right-box-left', 'tab', '', 'modx-panel-resource', '', 6),
+(177, 'resource/create', 'unpub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 2),
+(176, 'resource/create', 'pub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 1),
+(175, 'resource/create', 'publishedon', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 0),
+(174, 'resource/create', 'modx-page-settings-right', 'tab', '', 'modx-panel-resource', '', 5),
+(173, 'resource/create', 'menuindex', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 4),
+(172, 'resource/create', 'content_dispo', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 3),
+(171, 'resource/create', 'content_type', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 2),
+(170, 'resource/create', 'class_key', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 1),
+(169, 'resource/create', 'parent-cmb', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 0),
+(168, 'resource/create', 'modx-page-settings-left', 'tab', '', 'modx-panel-resource', '', 4),
+(167, 'resource/create', 'modx-page-settings', 'tab', '', 'modx-panel-resource', '', 3),
+(166, 'resource/create', 'published', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 5),
+(165, 'resource/create', 'hidemenu', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 4),
+(164, 'resource/create', 'link_attributes', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 3),
+(163, 'resource/create', 'menutitle', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 2),
+(162, 'resource/create', 'alias', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 1),
+(161, 'resource/create', 'template', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 0),
+(160, 'resource/create', 'modx-resource-main-right', 'tab', '', 'modx-panel-resource', '', 2),
+(159, 'resource/create', 'introtext', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 4),
+(158, 'resource/create', 'description', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 3),
+(157, 'resource/create', 'longtitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 2),
+(156, 'resource/create', 'pagetitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 1),
+(155, 'resource/create', 'id', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 0),
+(154, 'resource/create', 'modx-resource-main-left', 'tab', '', 'modx-panel-resource', '', 1),
+(153, 'resource/create', 'modx-resource-settings', 'tab', '', 'modx-panel-resource', '', 0),
+(152, 'resource/update', 'modx-resource-content', 'field', 'modx-resource-content', 'modx-panel-resource', '', 0),
+(151, 'resource/update', 'modx-resource-access-permissions', 'tab', '', 'modx-panel-resource', '', 9),
+(150, 'resource/update', 'modx-panel-resource-tv', 'tab', '', 'modx-panel-resource', 'tv', 8),
+(149, 'resource/update', 'deleted', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 2),
+(148, 'resource/update', 'syncsite', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 1),
+(147, 'resource/update', 'cacheable', 'field', 'modx-page-settings-right-box-right', 'modx-panel-resource', '', 0),
+(146, 'resource/update', 'modx-page-settings-right-box-right', 'tab', '', 'modx-panel-resource', '', 7),
+(145, 'resource/update', 'uri', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 4),
+(144, 'resource/update', 'uri_override', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 3),
+(143, 'resource/update', 'richtext', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 2),
+(142, 'resource/update', 'searchable', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 1),
+(141, 'resource/update', 'isfolder', 'field', 'modx-page-settings-right-box-left', 'modx-panel-resource', '', 0),
+(140, 'resource/update', 'modx-page-settings-right-box-left', 'tab', '', 'modx-panel-resource', '', 6),
+(139, 'resource/update', 'unpub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 2),
+(138, 'resource/update', 'pub_date', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 1),
+(137, 'resource/update', 'publishedon', 'field', 'modx-page-settings-right', 'modx-panel-resource', '', 0),
+(136, 'resource/update', 'modx-page-settings-right', 'tab', '', 'modx-panel-resource', '', 5),
+(135, 'resource/update', 'menuindex', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 4),
+(134, 'resource/update', 'content_dispo', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 3),
+(133, 'resource/update', 'content_type', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 2),
+(132, 'resource/update', 'class_key', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 1),
+(131, 'resource/update', 'parent-cmb', 'field', 'modx-page-settings-left', 'modx-panel-resource', '', 0),
+(130, 'resource/update', 'modx-page-settings-left', 'tab', '', 'modx-panel-resource', '', 4),
+(129, 'resource/update', 'modx-page-settings', 'tab', '', 'modx-panel-resource', '', 3),
+(128, 'resource/update', 'published', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 5),
+(127, 'resource/update', 'hidemenu', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 4),
+(126, 'resource/update', 'link_attributes', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 3),
+(125, 'resource/update', 'menutitle', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 2),
+(124, 'resource/update', 'alias', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 1),
+(123, 'resource/update', 'template', 'field', 'modx-resource-main-right', 'modx-panel-resource', '', 0),
+(122, 'resource/update', 'modx-resource-main-right', 'tab', '', 'modx-panel-resource', '', 2),
+(121, 'resource/update', 'introtext', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 4),
+(120, 'resource/update', 'description', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 3),
+(119, 'resource/update', 'longtitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 2),
+(118, 'resource/update', 'pagetitle', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 1),
+(117, 'resource/update', 'id', 'field', 'modx-resource-main-left', 'modx-panel-resource', '', 0),
+(116, 'resource/update', 'modx-resource-main-left', 'tab', '', 'modx-panel-resource', '', 1),
+(115, 'resource/update', 'modx-resource-settings', 'tab', '', 'modx-panel-resource', '', 0);
 
 -- --------------------------------------------------------
 
@@ -885,7 +847,7 @@ CREATE TABLE IF NOT EXISTS `modx_categories` (
   UNIQUE KEY `category` (`parent`,`category`),
   KEY `parent` (`parent`),
   KEY `rank` (`rank`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Дамп данных таблицы `modx_categories`
@@ -906,7 +868,8 @@ INSERT INTO `modx_categories` (`id`, `parent`, `category`, `rank`) VALUES
 (12, 0, 'TPL', 0),
 (13, 0, 'MEDIA', 0),
 (14, 0, 'OPTIONS', 0),
-(15, 0, 'SEO', 0);
+(15, 0, 'SEO', 0),
+(17, 0, 'SOCIAL', 0);
 
 -- --------------------------------------------------------
 
@@ -955,7 +918,9 @@ INSERT INTO `modx_categories_closure` (`ancestor`, `descendant`, `depth`) VALUES
 (14, 14, 0),
 (0, 14, 0),
 (15, 15, 0),
-(0, 15, 0);
+(0, 15, 0),
+(0, 17, 0),
+(17, 17, 0);
 
 -- --------------------------------------------------------
 
@@ -1253,7 +1218,7 @@ CREATE TABLE IF NOT EXISTS `modx_dashboard_widget` (
   KEY `type` (`type`),
   KEY `namespace` (`namespace`),
   KEY `lexicon` (`lexicon`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `modx_dashboard_widget`
@@ -1485,7 +1450,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `item` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `user_occurred` (`user`,`occurred`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -1539,7 +1504,45 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (45, 1, '2016-11-01 20:30:31', 'login', 'modContext', 'mgr'),
 (46, 1, '2016-11-01 20:34:45', 'change_profile_password', 'modUser', '1'),
 (47, 1, '2016-11-01 20:35:32', 'user_update', 'modUser', '1'),
-(48, 1, '2016-11-01 20:36:10', 'login', 'modContext', 'mgr');
+(48, 1, '2016-11-01 20:36:10', 'login', 'modContext', 'mgr'),
+(49, 1, '2018-10-15 11:36:40', 'login', 'modContext', 'mgr'),
+(50, 1, '2018-10-15 12:11:26', 'login', 'modContext', 'mgr'),
+(51, 1, '2018-10-15 12:11:46', 'clear_cache', '', 'mgr'),
+(52, 1, '2018-10-15 12:13:42', 'login', 'modContext', 'mgr'),
+(53, 1, '2018-10-15 12:15:12', 'package_uninstall', 'transport.modTransportPackage', 'unknown'),
+(54, 1, '2018-10-15 12:17:56', 'category_create', 'modCategory', '17'),
+(55, 1, '2018-10-15 12:19:06', 'tv_create', 'modTemplateVar', '7'),
+(56, 1, '2018-10-15 12:20:24', 'resource_update', 'modResource', '1'),
+(57, 1, '2018-10-15 12:21:04', 'resource_update', 'modResource', '1'),
+(58, 1, '2018-10-15 12:21:19', 'tv_update', 'modTemplateVar', '3'),
+(59, 1, '2018-10-15 12:21:19', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 3 Default'),
+(60, 1, '2018-10-15 12:21:45', 'tv_update', 'modTemplateVar', '4'),
+(61, 1, '2018-10-15 12:21:46', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 4 Default'),
+(62, 1, '2018-10-15 12:21:57', 'tv_update', 'modTemplateVar', '5'),
+(63, 1, '2018-10-15 12:21:58', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 5 Default'),
+(64, 1, '2018-10-15 12:22:25', 'tv_update', 'modTemplateVar', '2'),
+(65, 1, '2018-10-15 12:22:26', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(66, 1, '2018-10-15 12:22:39', 'tv_update', 'modTemplateVar', '2'),
+(67, 1, '2018-10-15 12:22:39', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(68, 1, '2018-10-15 12:22:46', 'tv_update', 'modTemplateVar', '2'),
+(69, 1, '2018-10-15 12:22:46', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(70, 1, '2018-10-15 12:22:51', 'tv_update', 'modTemplateVar', '2'),
+(71, 1, '2018-10-15 12:22:51', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(72, 1, '2018-10-15 12:24:17', 'tv_update', 'modTemplateVar', '4'),
+(73, 1, '2018-10-15 12:24:18', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 4 Default'),
+(74, 1, '2018-10-15 12:24:31', 'tv_update', 'modTemplateVar', '5'),
+(75, 1, '2018-10-15 12:24:31', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 5 Default'),
+(76, 1, '2018-10-15 12:24:41', 'tv_update', 'modTemplateVar', '5'),
+(77, 1, '2018-10-15 12:24:41', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 5 Default'),
+(78, 1, '2018-10-15 12:25:34', 'template_update', 'modTemplate', '1'),
+(79, 1, '2018-10-15 12:25:34', 'propertyset_update_from_element', 'modPropertySet', 'modTemplate 1 Default'),
+(80, 1, '2018-10-15 13:16:01', 'chunk_update', 'modChunk', '29'),
+(81, 1, '2018-10-15 13:16:02', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 29 Default'),
+(82, 1, '2018-10-15 13:20:08', 'chunk_update', 'modChunk', '29'),
+(83, 1, '2018-10-15 13:20:09', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 29 Default'),
+(84, 1, '2018-10-15 13:24:07', 'resource_update', 'modResource', '1'),
+(85, 1, '2018-10-15 13:26:46', 'chunk_update', 'modChunk', '32'),
+(86, 1, '2018-10-15 13:26:46', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 32 Default');
 
 -- --------------------------------------------------------
 
@@ -1594,6 +1597,17 @@ CREATE TABLE IF NOT EXISTS `modx_media_sources_elements` (
   `context_key` varchar(100) NOT NULL DEFAULT 'web',
   PRIMARY KEY (`source`,`object`,`object_class`,`context_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `modx_media_sources_elements`
+--
+
+INSERT INTO `modx_media_sources_elements` (`source`, `object_class`, `object`, `context_key`) VALUES
+(1, 'modTemplateVar', 2, 'web'),
+(1, 'modTemplateVar', 3, 'web'),
+(1, 'modTemplateVar', 4, 'web'),
+(1, 'modTemplateVar', 5, 'web'),
+(1, 'modTemplateVar', 7, 'web');
 
 -- --------------------------------------------------------
 
@@ -1693,8 +1707,8 @@ INSERT INTO `modx_menus` (`text`, `parent`, `action`, `description`, `icon`, `me
 ('users', 'manage', 'security/user', 'user_management_desc', '', 0, '', '', 'view_user', 'core'),
 ('refresh_site', 'manage', '', 'refresh_site_desc', '', 1, '', 'MODx.clearCache(); return false;', 'empty_cache', 'core'),
 ('refreshuris', 'refresh_site', '', 'refreshuris_desc', '', 0, '', 'MODx.refreshURIs(); return false;', 'empty_cache', 'core'),
-('remove_locks', 'manage', '', 'remove_locks_desc', '', 2, '', '\nMODx.msg.confirm({\n    title: _(''remove_locks'')\n    ,text: _(''confirm_remove_locks'')\n    ,url: MODx.config.connectors_url\n    ,params: {\n        action: ''system/remove_locks''\n    }\n    ,listeners: {\n        ''success'': {fn:function() {\n            var tree = Ext.getCmp("modx-resource-tree");\n            if (tree && tree.rendered) {\n                tree.refresh();\n            }\n         },scope:this}\n    }\n});', 'remove_locks', 'core'),
-('flush_access', 'manage', '', 'flush_access_desc', '', 3, '', 'MODx.msg.confirm({\n    title: _(''flush_access'')\n    ,text: _(''flush_access_confirm'')\n    ,url: MODx.config.connector_url\n    ,params: {\n        action: ''security/access/flush''\n    }\n    ,listeners: {\n        ''success'': {fn:function() { location.href = ''./''; },scope:this}\n    }\n});', 'access_permissions', 'core'),
+('remove_locks', 'manage', '', 'remove_locks_desc', '', 2, '', 'MODx.removeLocks();return false;', 'remove_locks', 'core'),
+('flush_access', 'manage', '', 'flush_access_desc', '', 3, '', 'MODx.msg.confirm({\n    title: _(''flush_access'')\n    ,text: _(''flush_access_confirm'')\n    ,url: MODx.config.connector_url\n    ,params: {\n        action: ''security/access/flush''\n    }\n    ,listeners: {\n        ''success'': {fn:function() { location.href = ''./''; },scope:this},\n        ''failure'': {fn:function(response) { Ext.MessageBox.alert(''failure'', response.responseText); },scope:this},\n    }\n});', 'access_permissions', 'core'),
 ('flush_sessions', 'manage', '', 'flush_sessions_desc', '', 4, '', 'MODx.msg.confirm({\n    title: _(''flush_sessions'')\n    ,text: _(''flush_sessions_confirm'')\n    ,url: MODx.config.connector_url\n    ,params: {\n        action: ''security/flush''\n    }\n    ,listeners: {\n        ''success'': {fn:function() { location.href = ''./''; },scope:this}\n    }\n});', 'flush_sessions', 'core'),
 ('reports', 'manage', '', 'reports_desc', '', 5, '', '', 'menu_reports', 'core'),
 ('site_schedule', 'reports', 'resource/site_schedule', 'site_schedule_desc', '', 0, '', '', 'view_document', 'core'),
@@ -1996,8 +2010,7 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('ud050ih9hmrbe99648rrekj5u6', 1478025000, 'modx.user.contextTokens|a:0:{}'),
-('lmr7654ll6l8fem3rkq1eb9ol6', 1478025370, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx576d2e1416c5e5.14484273_15818e09a108ba7.98827030";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}');
+('4rpnstt0pj0coudtetsp2nukq2', 1539598867, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_15bc45a46b05ae8.40834939";modx.mgr.session.cookie.lifetime|i:604800;modx.mgr.user.config|a:0:{}modx.user.1.userGroupNames|a:1:{i:0;s:13:"Administrator";}newResourceTokens|a:5:{i:0;s:23:"5bc45ae4761131.92178100";i:1;s:23:"5bc45b93889c88.20050727";i:2;s:23:"5bc45c99d449f2.81122882";i:3;s:23:"5bc45cdc18a2a5.22775060";i:4;s:23:"5bc46a1209ca11.62787722";}');
 
 -- --------------------------------------------------------
 
@@ -2076,7 +2089,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
 --
 
 INSERT INTO `modx_site_content` (`id`, `type`, `contentType`, `pagetitle`, `longtitle`, `description`, `alias`, `link_attributes`, `published`, `pub_date`, `unpub_date`, `parent`, `isfolder`, `introtext`, `content`, `richtext`, `template`, `menuindex`, `searchable`, `cacheable`, `createdby`, `createdon`, `editedby`, `editedon`, `deleted`, `deletedon`, `deletedby`, `publishedon`, `publishedby`, `menutitle`, `donthit`, `privateweb`, `privatemgr`, `content_dispo`, `hidemenu`, `class_key`, `context_key`, `content_type`, `uri`, `uri_override`, `hide_children_in_tree`, `show_in_tree`, `properties`) VALUES
-(1, 'document', 'text/html', 'Главная', 'Поздравляем!', '', 'index', '', 1, 0, 0, 0, 0, '', '', 1, 1, 0, 1, 1, 1, 1466773018, 1, 1466775701, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'index.html', 0, 0, 1, NULL),
+(1, 'document', 'text/html', 'Главная', 'Поздравляем!', '', 'index', '', 1, 0, 0, 0, 0, '', '', 1, 1, 0, 1, 1, 1, 1466773018, 1, 1539599046, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'index.html', 0, 0, 1, NULL),
 (2, 'document', 'text/html', '404', 'Page not found', '', '404', '', 0, 0, 0, 0, 0, NULL, NULL, 1, 0, 0, 1, 1, 1, 1466774347, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, '404.html', 0, 0, 1, NULL),
 (3, 'document', 'text/xml', 'Sitemap', '', '', 'sitemap', '', 1, 0, 0, 0, 0, NULL, '[[pdoSitemap]]', 0, 0, 0, 1, 1, 1, 1466774347, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 2, 'sitemap.xml', 0, 0, 1, NULL);
 
@@ -2105,7 +2118,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
   KEY `category` (`category`),
   KEY `locked` (`locked`),
   KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Дамп данных таблицы `modx_site_htmlsnippets`
@@ -2140,10 +2153,10 @@ INSERT INTO `modx_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `na
 (26, 1, 0, 'tpl.Tickets.sections.wrapper', '', 0, 8, 0, '[[+modx.user.id:isloggedin:is=`1`:then=`\n<span class="tickets-subscribe pull-right">\n	<label for="tickets-subscribe" class="checkbox">\n		<input type="checkbox" name="" id="tickets-subscribe" value="1" data-id="[[*id]]" [[+subscribed:notempty=`checked`]] /> [[%tickets_section_notify]]\n	</label>\n</span>\n`:else=``]]\n\n<div class="tickets-list">\n	[[+output]]\n</div>', 0, NULL, 0, 'core/components/tickets/elements/chunks/chunk.ticket_sections_wrapper.tpl'),
 (27, 1, 0, 'tpl.Tickets.meta', '', 0, 8, 0, '<div class="ticket-meta row" data-id="[[+id]]">\n	<span class="col-md-5">\n		<i class="glyphicon glyphicon-calendar"></i> [[+date_ago]]\n		&nbsp;&nbsp;\n		<i class="glyphicon glyphicon-user"></i> [[+fullname]]\n	</span>\n	<span class="col-md-2"><a href="[[~[[+section.id]]]]"><i class="glyphicon glyphicon-folder-open"></i> [[+section.pagetitle]]</a></span>\n	<span class="col-md-2">\n		<span class="ticket-star[[+can_star]]">[[+stared]][[+unstared]] <span class="ticket-star-count">[[+stars]]</span></span>\n		&nbsp;&nbsp;\n		<i class="glyphicon glyphicon-eye-open"></i> [[+views]]\n	</span>\n	<span class="col-md-2 pull-right ticket-rating[[+active]][[+inactive]]">\n		<span class="vote plus[[+voted_plus]]" title="[[%ticket_like]]">\n			<i class="glyphicon glyphicon-arrow-up"></i>\n		</span>\n		[[+can_vote]][[+cant_vote]]\n		<span class="vote minus[[+voted_minus]]" title="[[%ticket_dislike]]">\n			<i class="glyphicon glyphicon-arrow-down"></i>\n		</span>\n	</span>\n</div>\n[[+has_files]]\n\n<!--tickets_can_vote <span class="vote rating" title="[[%ticket_refrain]]"><i class="glyphicon glyphicon-minus"></i></span>-->\n<!--tickets_cant_vote <span class="rating[[+rating_positive]][[+rating_negative]]" title="[[%ticket_rating_total]] [[+rating_total]]: ↑[[+rating_plus]] [[%ticket_rating_and]] ↓[[+rating_minus]]">[[+rating]]</span>-->\n<!--tickets_active  active-->\n<!--tickets_inactive  inactive-->\n<!--tickets_voted_plus  voted-->\n<!--tickets_voted_minus  voted-->\n<!--tickets_rating_positive  positive-->\n<!--tickets_rating_negative  negative-->\n<!--tickets_has_files\n<ul class="ticket-files">\n	<strong>[[%ticket_uploaded_files]]:</strong>\n	[[+files]]\n</ul>-->\n<!--tickets_can_star  active-->\n<!--tickets_stared <i class="glyphicon glyphicon-star stared star"></i>-->\n<!--tickets_unstared <i class="glyphicon glyphicon-star unstared star"></i>-->', 0, NULL, 0, 'core/components/tickets/elements/chunks/chunk.ticket_meta.tpl'),
 (28, 1, 0, 'tpl.Tickets.meta.file', '', 0, 8, 0, '<li>\n	<a href="[[+url]]" target="_blank">[[+name]]</a> [[+size]] kb\n</li>', 0, NULL, 0, 'core/components/tickets/elements/chunks/chunk.ticket_meta_file.tpl'),
-(29, 0, 0, 'HEAD', 'Chunk', 0, 10, 0, '<head>\n    <base href="[[++site_url]]" />\n    <meta charset="[[++modx_charset]]" />\n    \n    <title>[[*pagetitle]] - [[++site_name]]</title>\n    \n    <meta name="description" content="">\n\n	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n	<link rel="shortcut icon" href="design/img/favicon.png" type="image/x-icon">\n\n	<link rel="stylesheet" href="design/css/vendor.min.css">\n	<link rel="stylesheet" href="design/css/header.min.css">\n	<link rel="stylesheet" href="design/css/main.min.css">\n</head>', 0, 'a:0:{}', 0, ''),
+(29, 0, 0, 'HEAD', 'Chunk', 0, 10, 0, '<head>\n    <base href="[[++site_url]]" />\n    <meta charset="[[++modx_charset]]" />\n    \n    <title>[[*meta_title::default=`[[*pagetitle]]`]]</title>\n    <meta name="description" content="[[*introtext:is=``:then=`Some description text`:else=`[[*introtext]]`]]">\n    <meta name="keywords" content="[[*meta_keywords::default=`Some keywords hare`]]">\n\n	<meta http-equiv="X-UA-Compatible" content="IE=edge">\n	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\n	\n	<meta property="og:url"                content="[[~[[++site_start]]]][[*uri]]" />\n    <meta property="og:type"               content="website"/>\n    <meta property="og:title"              content="[[*meta_title::default=`[[*pagetitle]]`]]" />\n    <meta property="og:description"        content="[[*introtext:is=``:then=`Some description text`:else=`[[*introtext]]`]]" />\n    <meta property="og:image"              content="[[*meta_thumb::default=`[[*meta_thumb:is=``:then=`[[~[[++site_start]]]]design/img/tsumbaluk-in-ua.jpg`:else=`[[*meta_thumb]]`]]`]]" />\n\n    <link rel="shortcut icon" href="design/img/favicon.png" type="image/x-icon">\n	<link rel="stylesheet" href="design/css/vendor.min.css">\n	<link rel="stylesheet" href="design/css/header.min.css">\n	<link rel="stylesheet" href="design/css/main.min.css">\n</head>', 0, 'a:0:{}', 0, ''),
 (30, 0, 0, 'HEADER', 'Chunk', 0, 10, 0, '<h1>[[++site_name]]</h1>', 0, 'a:0:{}', 0, ''),
 (31, 0, 0, 'SCRIPTS', 'Chunk', 0, 10, 0, '<script src="design/js/jquery-2.2.0.min.js"></script>\n<script src="design/js/plagin.min.js"></script>\n<script src="design/js/common.min.js"></script>', 0, 'a:0:{}', 0, ''),
-(32, 0, 0, 'FOOTER', 'Chunk', 0, 10, 0, NULL, 0, NULL, 0, '');
+(32, 0, 0, 'FOOTER', 'Chunk', 0, 10, 0, '[[getImageList? \n    &tvname=`tv_social_box`\n    &limit=``\n    &docid=`1`\n    &tpl=`@CODE:  <a href="[[+link]]" rel="nofollow" target="_blank"><i class="[[+icon]]"></i></a>`\n]]', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2275,7 +2288,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_snippets` (
   KEY `locked` (`locked`),
   KEY `moduleguid` (`moduleguid`),
   KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Дамп данных таблицы `modx_site_snippets`
@@ -2374,7 +2387,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_templates` (
 --
 
 INSERT INTO `modx_site_templates` (`id`, `source`, `property_preprocess`, `templatename`, `description`, `editor_type`, `category`, `icon`, `template_type`, `content`, `locked`, `properties`, `static`, `static_file`) VALUES
-(1, 0, 0, 'Main', 'Template', 0, 0, '', 0, '<!doctype html>\n<html lang="en">\n    [[$HEAD]]\n<body>\n    <header>\n        [[$HEADER]]\n    </header>\n\n    <footer>\n	    [[$FOOTER]]\n	</footer>\n	    [[$SCRIPTS]] \n</body>\n</html>\n', 0, 'a:0:{}', 0, '');
+(1, 0, 0, 'Main', 'Template', 0, 0, '', 0, '<!doctype html>\n<html lang="ru">\n    [[$HEAD]]\n<body>\n    <header>\n        [[$HEADER]]\n    </header>\n\n    <footer>\n	    [[$FOOTER]]\n	</footer>\n	    [[$SCRIPTS]] \n</body>\n</html>\n', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2408,7 +2421,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvars` (
   KEY `locked` (`locked`),
   KEY `rank` (`rank`),
   KEY `static` (`static`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `modx_site_tmplvars`
@@ -2416,11 +2429,12 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvars` (
 
 INSERT INTO `modx_site_tmplvars` (`id`, `source`, `property_preprocess`, `type`, `name`, `caption`, `description`, `editor_type`, `category`, `locked`, `elements`, `rank`, `display`, `default_text`, `properties`, `input_properties`, `output_properties`, `static`, `static_file`) VALUES
 (1, 0, 0, 'image', 'tv_image', 'Page image', '', 0, 10, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(2, 0, 0, 'image', 'tv_thumb', 'Page thumbnail', '', 0, 13, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(3, 0, 0, 'text', 'meta_title', 'META Title', '', 0, 15, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(4, 0, 0, 'textarea', 'meta_description', 'META Description', '', 0, 15, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(5, 0, 0, 'textarea', 'meta_keywords', 'META Keywords', '', 0, 15, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(6, 0, 0, 'listbox', 'meta_robots', 'META Robots', '', 0, 15, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, '');
+(2, 0, 0, 'image', 'meta_thumb', 'Page thumbnail', '', 0, 15, 0, '', 4, 'default', '', 'a:0:{}', NULL, NULL, 0, ''),
+(3, 0, 0, 'text', 'meta_title', 'META Title', '', 0, 15, 0, '', 0, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
+(4, 0, 0, 'text', 'meta_description', 'META Description', '', 0, 15, 0, '', 1, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
+(5, 0, 0, 'text', 'meta_keywords', 'META Keywords', '', 0, 15, 0, '', 2, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
+(6, 0, 0, 'listbox', 'meta_robots', 'META Robots', '', 0, 15, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
+(7, 1, 0, 'migx', 'tv_social_box', 'Социальные сети', '', 0, 17, 0, '', 0, 'default', '', 'a:0:{}', 'a:7:{s:7:"configs";s:0:"";s:8:"formtabs";s:243:"[{\n  "caption": "Социальные сети",\n  "fields": [{\n    "field": "title",\n    "caption": "Заголовок"\n  },{\n    "field": "link",\n    "caption": "Ссылка"\n  },{\n    "field": "icon",\n    "caption": "Иконка"\n  }]\n}]";s:7:"columns";s:160:"[{\n  "header": "Заголовок",\n  "sortable": "true",\n  "dataIndex": "title"\n},{\n  "header": "Ссылка",\n  "sortable": "true",\n  "dataIndex": "link"\n}]";s:7:"btntext";s:0:"";s:10:"previewurl";s:0:"";s:10:"jsonvarkey";s:0:"";s:19:"autoResourceFolders";s:5:"false";}', 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2451,7 +2465,14 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_contentvalues` (
   KEY `tmplvarid` (`tmplvarid`),
   KEY `contentid` (`contentid`),
   KEY `tv_cnt` (`tmplvarid`,`contentid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `modx_site_tmplvar_contentvalues`
+--
+
+INSERT INTO `modx_site_tmplvar_contentvalues` (`id`, `tmplvarid`, `contentid`, `value`) VALUES
+(1, 7, 1, '[{"MIGX_id":"1","title":"Facebook","link":"https:\\/\\/www.facebook.com","icon":"fa fa-facebook"},{"MIGX_id":"2","title":"Linkedin","link":"https:\\/\\/ua.linkedin.com\\/","icon":"fa fa-linkedin"}]');
 
 -- --------------------------------------------------------
 
@@ -2465,6 +2486,17 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvar_templates` (
   `rank` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`tmplvarid`,`templateid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `modx_site_tmplvar_templates`
+--
+
+INSERT INTO `modx_site_tmplvar_templates` (`tmplvarid`, `templateid`, `rank`) VALUES
+(7, 1, 0),
+(3, 1, 0),
+(4, 1, 0),
+(5, 1, 0),
+(2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2691,7 +2723,15 @@ INSERT INTO `modx_system_eventnames` (`name`, `service`, `groupname`) VALUES
 ('OnTicketStar', 6, 'Tickets'),
 ('OnTicketUnStar', 6, 'Tickets'),
 ('OnCommentStar', 6, 'Tickets'),
-('OnCommentUnStar', 6, 'Tickets');
+('OnCommentUnStar', 6, 'Tickets'),
+('OnUserProfileBeforeSave', 1, 'User Profiles'),
+('OnUserProfileSave', 1, 'User Profiles'),
+('OnUserProfileBeforeRemove', 1, 'User Profiles'),
+('OnUserProfileRemove', 1, 'User Profiles'),
+('OnResourceCacheUpdate', 1, 'Resources'),
+('OnPackageInstall', 2, 'Package Manager'),
+('OnPackageUninstall', 2, 'Package Manager'),
+('OnPackageRemove', 2, 'Package Manager');
 
 -- --------------------------------------------------------
 
@@ -2940,8 +2980,8 @@ INSERT INTO `modx_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`
 ('manager_use_fullname', '', 'combo-boolean', 'core', 'manager', '0000-00-00 00:00:00'),
 ('parser_recurse_uncacheable', '1', 'combo-boolean', 'core', 'system', '0000-00-00 00:00:00'),
 ('preserve_menuindex', '1', 'combo-boolean', 'core', 'manager', '0000-00-00 00:00:00'),
-('settings_version', '2.5.0-pl', 'textfield', 'core', 'system', '0000-00-00 00:00:00'),
-('settings_distro', 'traditional', 'textfield', 'core', 'system', '0000-00-00 00:00:00'),
+('settings_version', '2.6.5-pl', 'textfield', 'core', 'system', '2018-10-15 09:13:11'),
+('settings_distro', 'advanced', 'textfield', 'core', 'system', '2018-10-15 09:13:11'),
 ('ace.theme', 'chrome', 'textfield', 'ace', 'general', '0000-00-00 00:00:00'),
 ('ace.font_size', '13px', 'textfield', 'ace', 'general', '0000-00-00 00:00:00'),
 ('ace.word_wrap', '', 'combo-boolean', 'ace', 'general', '0000-00-00 00:00:00'),
@@ -3059,7 +3099,11 @@ INSERT INTO `modx_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`
 ('tiny.template_selected_content_classes', '', 'textfield', 'tinymce', 'general', '0000-00-00 00:00:00'),
 ('tiny.theme_advanced_blockformats', 'p,h1,h2,h3,h4,h5,h6,div,blockquote,code,pre,address', 'textfield', 'tinymce', 'advanced-theme', '0000-00-00 00:00:00'),
 ('tiny.theme_advanced_font_sizes', '80%,90%,100%,120%,140%,160%,180%,220%,260%,320%,400%,500%,700%', 'textfield', 'tinymce', 'advanced-theme', '0000-00-00 00:00:00'),
-('tiny.use_uncompressed_library', '', 'combo-boolean', 'tinymce', 'general', '0000-00-00 00:00:00');
+('tiny.use_uncompressed_library', '', 'combo-boolean', 'tinymce', 'general', '0000-00-00 00:00:00'),
+('use_context_resource_table', '1', 'combo-boolean', 'core', 'caching', '0000-00-00 00:00:00'),
+('allow_tv_eval', '1', 'combo-boolean', 'core', 'system', '0000-00-00 00:00:00'),
+('log_snippet_not_found', '1', 'combo-boolean', 'core', 'site', '0000-00-00 00:00:00'),
+('access_policies_version', '1.0', 'textfield', 'core', 'system', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -3391,7 +3435,7 @@ CREATE TABLE IF NOT EXISTS `modx_transport_providers` (
 --
 
 INSERT INTO `modx_transport_providers` (`id`, `name`, `description`, `service_url`, `username`, `api_key`, `created`, `updated`, `active`, `priority`, `properties`) VALUES
-(1, 'modx.com', 'The official MODX transport facility for 3rd party components.', 'http://rest.modx.com/extras/', '', '', '2016-04-21 09:06:18', NULL, 1, 10, '');
+(1, 'modx.com', 'The official MODX transport provider for 3rd party components.', 'https://rest.modx.com/extras/', '', '', '2018-07-11 19:07:48', '2018-10-15 09:13:00', 1, 10, '');
 
 -- --------------------------------------------------------
 
@@ -3471,7 +3515,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 --
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'tsumbaluk888@gmail.com', '', '', 0, 0, 0, 3, 1478025031, 1478025370, 0, 'lmr7654ll6l8fem3rkq1eb9ol6', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
+(1, 1, 'Администратор по умолчанию', 'tsumbaluk888@gmail.com', '', '', 0, 0, 0, 6, 1539594686, 1539594822, 0, '4rpnstt0pj0coudtetsp2nukq2', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
 (2, 2, '', 'tsumbaluk888@gmail.com', '', '', 0, 0, 0, 1, 0, 1466777637, 0, 'os7vu8ih7mleaj2h3vifv40gi5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
 -- --------------------------------------------------------

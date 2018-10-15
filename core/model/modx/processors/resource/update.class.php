@@ -571,8 +571,10 @@ class modResourceUpdateProcessor extends modObjectUpdateProcessor {
                         /* handles checkboxes & multiple selects elements */
                         if (is_array($value)) {
                             $featureInsert = array();
-                            while (list($featureValue, $featureItem) = each($value)) {
-                                if(empty($featureItem)) { continue; }
+                            foreach ($value as $featureValue => $featureItem) {
+                                if (isset($featureItem) && $featureItem === '') {
+                                    continue;
+                                }
                                 $featureInsert[count($featureInsert)] = $featureItem;
                             }
                             $value = implode('||',$featureInsert);
@@ -723,7 +725,8 @@ class modResourceUpdateProcessor extends modObjectUpdateProcessor {
             }
         }
         $returnArray['class_key'] = $this->object->get('class_key');
-        $this->workingContext->prepare(true);
+        $this->workingContext->prepare(false);
+        $this->modx->reloadContext($this->workingContext->key);
         $returnArray['preview_url'] = '';
         if (!$this->object->get('deleted')) {
             $returnArray['preview_url'] = $this->modx->makeUrl($this->object->get('id'), $this->object->get('context_key'), '', 'full');

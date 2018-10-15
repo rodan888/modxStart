@@ -22,7 +22,7 @@ if (strstr(str_replace('.','',serialize(array_merge($_GET, $_POST, $_COOKIE))), 
 }
 
 if (!defined('MODX_CORE_PATH')) {
-    define('MODX_CORE_PATH', dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR);
+    define('MODX_CORE_PATH', dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR);
 }
 require_once (MODX_CORE_PATH . 'xpdo/xpdo.class.php');
 
@@ -159,6 +159,14 @@ class modX extends xPDO {
      */
     public $version= null;
     /**
+     * @var string Unique site id for each MODX installation.
+     */
+    public $site_id;
+    /**
+     * @var string Unique uuid for each MODX installation.
+     */
+    public $uuid;
+    /**
      * @var boolean Indicates if modX has been successfully initialized for a
      * modContext.
      */
@@ -272,9 +280,8 @@ class modX extends xPDO {
      * @static
      */
     public static function protect() {
-        if (isset ($_SERVER['QUERY_STRING']) && strpos(urldecode($_SERVER['QUERY_STRING']), chr(0)) !== false) die();
         if (@ ini_get('register_globals') && isset ($_REQUEST)) {
-            while (list($key, $value)= each($_REQUEST)) {
+            foreach ($_REQUEST as $key => $value) {
                 $GLOBALS[$key] = null;
                 unset ($GLOBALS[$key]);
             }
@@ -1003,10 +1010,10 @@ class modX extends xPDO {
         if (!empty($context) && (!empty($uri) || $uri === '0')) {
             $useAliasMap = (boolean) $this->getOption('cache_alias_map', null, false);
             if ($useAliasMap) {
-                if (isset($this->context) && $this->context->get('key') === $context && array_key_exists($uri, $this->aliasMap)) {
+                if (isset($this->context) && $this->context->get('key') === $context && is_array($this->aliasMap) && array_key_exists($uri, $this->aliasMap)) {
                     $resourceId = (integer) $this->aliasMap[$uri];
                 } elseif ($ctx = $this->getContext($context)) {
-                    $useAliasMap = $ctx->getOption('cache_alias_map', false) && array_key_exists($uri, $ctx->aliasMap);
+                    $useAliasMap = $ctx->getOption('cache_alias_map', false) && is_array($ctx->aliasMap) && array_key_exists($uri, $ctx->aliasMap);
                     if ($useAliasMap && array_key_exists($uri, $ctx->aliasMap)) {
                         $resourceId = (integer) $ctx->aliasMap[$uri];
                     }
@@ -1042,8 +1049,8 @@ class modX extends xPDO {
             if (file_exists(MODX_CORE_PATH . "error/{$type}.include.php")) {
                 @include(MODX_CORE_PATH . "error/{$type}.include.php");
             }
-            header($this->getOption('error_header', $options, 'HTTP/1.1 503 Service Unavailable'));
-            echo "<html><head><title>{$errorPageTitle}</title></head><body><h1>503 Error</h1><p>{$errorMessage}</p></body></html>";
+            header($this->getOption('error_header', $options, $_SERVER['SERVER_PROTOCOL'] . ' 503 Service Unavailable'));
+            echo "<html><head><title>{$errorPageTitle}</title></head><body>{$errorMessage}</body></html>";
             @session_write_close();
         } else {
             echo ucfirst($type) . "\n";
@@ -1111,8 +1118,7 @@ class modX extends xPDO {
                     )
                 );
                 if (!empty($this->resource->_fields)) {
-                    reset($this->resource->_fields);
-                    while (list($fkey, $fval) = each($this->resource->_fields)) {
+                    foreach ($this->resource->_fields as $fkey => $fval) {
                         if (!in_array($fkey, $excludes)) {
                             if (is_scalar($fval) && $fval !== '') {
                                 $currentResource[$fkey] = $fval;
@@ -1137,11 +1143,13 @@ class modX extends xPDO {
                 }
                 $this->request->prepareResponse();
                 exit();
+            } else {
+                $this->sendErrorPage();
             }
             $options= array_merge(
                 array(
                     'error_type' => '404'
-                    ,'error_header' => $this->getOption('error_page_header', $options,'HTTP/1.1 404 Not Found')
+                    ,'error_header' => $this->getOption('error_page_header', $options,$_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found')
                     ,'error_pagetitle' => $this->getOption('error_page_pagetitle', $options,'Error 404: Page not found')
                     ,'error_message' => $this->getOption('error_page_message', $options,'<h1>Page not found</h1><p>The page you requested was not found.</p>')
                 ),
@@ -1163,16 +1171,16 @@ class modX extends xPDO {
         if (!is_array($options)) $options = array();
         $options= array_merge(
             array(
-                'response_code' => $this->getOption('error_page_header', $options, 'HTTP/1.1 404 Not Found')
+                'response_code' => $this->getOption('error_page_header', $options, $_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found')
                 ,'error_type' => '404'
-                ,'error_header' => $this->getOption('error_page_header', $options, 'HTTP/1.1 404 Not Found')
+                ,'error_header' => $this->getOption('error_page_header', $options, $_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found')
                 ,'error_pagetitle' => $this->getOption('error_page_pagetitle', $options, 'Error 404: Page not found')
                 ,'error_message' => $this->getOption('error_page_message', $options, '<h1>Page not found</h1><p>The page you requested was not found.</p>')
             ),
             $options
         );
         $this->invokeEvent('OnPageNotFound', $options);
-        $this->sendForward($this->getOption('error_page', $options, '404'), $options);
+        $this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options);
     }
 
     /**
@@ -1187,16 +1195,16 @@ class modX extends xPDO {
         if (!is_array($options)) $options = array();
         $options= array_merge(
             array(
-                'response_code' => $this->getOption('unauthorized_page_header' ,$options ,'HTTP/1.1 401 Unauthorized')
+                'response_code' => $this->getOption('unauthorized_page_header' ,$options ,$_SERVER['SERVER_PROTOCOL'] . ' 401 Unauthorized')
                 ,'error_type' => '401'
-                ,'error_header' => $this->getOption('unauthorized_page_header', $options,'HTTP/1.1 401 Unauthorized')
+                ,'error_header' => $this->getOption('unauthorized_page_header', $options,$_SERVER['SERVER_PROTOCOL'] . ' 401 Unauthorized')
                 ,'error_pagetitle' => $this->getOption('unauthorized_page_pagetitle',$options, 'Error 401: Unauthorized')
                 ,'error_message' => $this->getOption('unauthorized_page_message', $options,'<h1>Unauthorized</h1><p>You are not authorized to view the requested content.</p>')
             ),
             $options
         );
         $this->invokeEvent('OnPageUnauthorized', $options);
-        $this->sendForward($this->getOption('unauthorized_page', $options, '401'), $options);
+        $this->sendForward($this->getOption('unauthorized_page', $options, $this->getOption('site_start')), $options);
     }
 
     /**
@@ -1651,12 +1659,18 @@ class modX extends xPDO {
         $isClass = true;
         $processorsPath = isset($options['processors_path']) && !empty($options['processors_path']) ? $options['processors_path'] : $this->config['processors_path'];
         if (isset($options['location']) && !empty($options['location'])) $processorsPath .= ltrim($options['location'],'/') . '/';
-        $processorFile = $processorsPath.ltrim(str_replace('../', '', $action . '.class.php'),'/');
+
+        // Prevent path traversal through the action
+        $action = preg_replace('/[\.]{2,}/', '', htmlspecialchars($action));
+
+        // Find the processor file, preferring class based processors over old-style processors
+        $processorFile = $processorsPath.ltrim($action . '.class.php','/');
         if (!file_exists($processorFile)) {
-            $processorFile = $processorsPath.ltrim(str_replace('../', '', $action . '.php'),'/');
+            $processorFile = $processorsPath.ltrim($action . '.php','/');
             $isClass = false;
         }
 
+        // Prepare a response
         $response = '';
         if (file_exists($processorFile)) {
             if (!isset($this->lexicon)) $this->getService('lexicon', 'modLexicon');
@@ -1820,8 +1834,7 @@ class modX extends xPDO {
         $chunk= $this->getChunk($chunkName);
         if (!empty($chunk) || $chunk === '0') {
             if(is_array($chunkArr)) {
-                reset($chunkArr);
-                while (list($key, $value)= each($chunkArr)) {
+                foreach ($chunkArr as $key => $value) {
                     $chunk= str_replace($prefix.$key.$suffix, $value, $chunk);
                 }
             }
@@ -1883,7 +1896,7 @@ class modX extends xPDO {
                 $userId = $this->user->get('id');
         	}
         }
-        
+
         $ml = $this->newObject('modManagerLog');
         $ml->set('user', (integer) $userId);
         $ml->set('occurred', strftime('%Y-%m-%d %H:%M:%S'));
@@ -1902,13 +1915,18 @@ class modX extends xPDO {
      * Remove an event from the eventMap so it will not be invoked.
      *
      * @param string $event
+     * @param integer $pluginId Plugin identifier to remove from the eventMap for the specified event.
      * @return boolean false if the event parameter is not specified or is not
      * present in the eventMap.
      */
-    public function removeEventListener($event) {
+    public function removeEventListener($event, $pluginId = 0) {
         $removed = false;
         if (!empty($event) && isset($this->eventMap[$event])) {
-            unset ($this->eventMap[$event]);
+            if (intval($pluginId)) {
+                unset ($this->eventMap[$event][$pluginId]);
+            } else {
+                unset ($this->eventMap[$event]);
+            }
             $removed = true;
         }
         return $removed;
@@ -1927,16 +1945,18 @@ class modX extends xPDO {
      *
      * @param string $event Name of the event.
      * @param integer $pluginId Plugin identifier to add to the event.
+     * @param string $propertySetName The name of property set bound to the plugin
      * @return boolean true if the event is successfully added, otherwise false.
      */
-    public function addEventListener($event, $pluginId) {
+    public function addEventListener($event, $pluginId, $propertySetName = '') {
         $added = false;
+        $pluginId = intval($pluginId);
         if ($event && $pluginId) {
             if (!isset($this->eventMap[$event]) || empty ($this->eventMap[$event])) {
                 $this->eventMap[$event]= array();
             }
-            $this->eventMap[$event][]= $pluginId;
-            $added= true;
+            $this->eventMap[$event][$pluginId]= $pluginId . (!empty($propertySetName) ? ':' . $propertySetName : '');
+            $added = true;
         }
         return $added;
     }
@@ -2130,7 +2150,7 @@ class modX extends xPDO {
      */
     public function checkSiteStatus() {
         $status = false;
-        if ($this->config['site_status'] == '1' || $this->hasPermission('view_offline')) {
+        if ($this->config['site_status'] == '1' || ($this->getSessionState() === modX::SESSION_STATE_INITIALIZED && $this->hasPermission('view_offline'))) {
             $status = true;
         }
         return $status;
@@ -2340,7 +2360,7 @@ class modX extends xPDO {
         }
         if ($initialized) {
             $this->setLogLevel($this->getOption('log_level', $options, xPDO::LOG_LEVEL_ERROR));
-            $this->setLogTarget($this->getOption('log_target', $options, 'FILE'));
+            $this->setLogTarget($this->getOption('log_target', $options, 'FILE', true));
             $debug = $this->getOption('debug');
             if (!is_null($debug) && $debug !== '') {
                 $this->setDebug($debug);

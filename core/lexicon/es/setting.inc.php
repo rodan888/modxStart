@@ -95,8 +95,11 @@ $_lang['setting_allow_manager_login_forgot_password_desc'] = 'Configurar esto co
 $_lang['setting_allow_tags_in_post'] = 'Permitir Etiquetas HTML Tags en POST';
 $_lang['setting_allow_tags_in_post_desc'] = 'Si se desactiva, todas las acciones POST dentro del admin quitarán cualquier etiqueta HTML, entidades numéricas, y etiquetas de MODX. MODX recomienda activar esta configuración.';
 
+$_lang['setting_allow_tv_eval'] = 'Disable eval in TV binding';
+$_lang['setting_allow_tv_eval_desc'] = 'Select this option to enable or disable eval in TV binding. If this option is set to no, the code/value will just be handled as regular text.';
+
 $_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
-$_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
+$_lang['setting_anonymous_sessions_desc'] = 'If disabled, only authenticated users will have access to a PHP session. This can reduce overhead for anonymous users and the load they impose on a MODX site if they do not need access to a unique session. If session_enabled is false, this setting has no effect as sessions would never be available.';
 
 $_lang['setting_archive_with'] = 'Forzar Archivos PCLZip';
 $_lang['setting_archive_with_desc'] = 'Si es verdadero, se usará PCLZip en vez de ZipArchive como la extensión zip. Utiliza esto si estás experimentando errores de extracción o descomprimiendo zips en el Administrador de Paquetes.';
@@ -127,6 +130,9 @@ $_lang['setting_cache_action_map_desc'] = 'Cuando esté activado, las acciones (
 
 $_lang['setting_cache_alias_map'] = 'Activar Caché de Alias';
 $_lang['setting_cache_alias_map_desc'] = 'Al activar, las URIs de los recursos se almacenan en la caché del Contexto. Activar para sitios pequeños y desactivar para sitios más grandes para un mejor rendimiento.';
+
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Habilitar Cache de la Configuración de Contextos';
 $_lang['setting_cache_context_settings_desc'] = 'Cuando esté activado, las configuraciones de contextos serán almacenadas en caché para reducir los tiempos de carga.';
@@ -423,9 +429,6 @@ $_lang['setting_manager_date_format_desc'] = 'El formato de fecha, en formato de
 $_lang['setting_manager_favicon_url'] = 'URL del Favicon del Panel de Administración';
 $_lang['setting_manager_favicon_url_desc'] = 'Si está configurado, cargará el favicon para el Panel de Administración de MODX desde esta URL. Debe de ser una URL relativa al directorio "manager/", o una URL absoluta.';
 
-$_lang['setting_manager_html5_cache'] = 'Utilizar la Caché Local de HTML5 en el Panel de Administración';
-$_lang['setting_manager_html5_cache_desc'] = 'Experimental. Utilizar la caché local de HTML5 para almacenar en caché los elementos del Panel de Administración. Recomendado solo si se utilizan navegadores modernos para acceder al Panel de Administración.';
-
 $_lang['setting_manager_js_cache_file_locking'] = 'Habilitar Bloqueo de Archivos para la Caché de CSS/JS del Panel de Administración';
 $_lang['setting_manager_js_cache_file_locking_desc'] = 'Bloqueo de Archivos de la Caché. Configurar a "No" si el sistema de archivos es NFS.';
 $_lang['setting_manager_js_cache_max_age'] = 'Tiempo de Vida de la Caché de CSS/JS del Panel de Administración';
@@ -497,6 +500,9 @@ $_lang['setting_password_generated_length_desc'] = 'La longitud de la contraseñ
 
 $_lang['setting_password_min_length'] = 'Longitud Mínima de la Contraseña';
 $_lang['setting_password_min_length_desc'] = 'La longitud mínima de una contraseña para un Usuario.';
+
+$_lang['setting_preserve_menuindex'] = 'Preserve Menu Index When Duplicating Resources';
+$_lang['setting_preserve_menuindex_desc'] = 'When duplicating Resources, the menu index order will also be preserved.';
 
 $_lang['setting_principal_targets'] = 'Destino de las ACL';
 $_lang['setting_principal_targets_desc'] = 'Personalizar dónde se utilizarán las ACL sobre los Usuarios de MODX.';
@@ -810,3 +816,6 @@ $_lang['setting_default_username_desc'] = 'Default username for an unauthenticat
 
 $_lang['setting_manager_use_fullname'] = 'Show fullname in manager header ';
 $_lang['setting_manager_use_fullname_desc'] = 'If set to yes, the content of the "fullname" field will be shown in manager instead of "loginname"';
+
+$_lang['log_snippet_not_found'] = 'Log snippets not found';
+$_lang['log_snippet_not_found_desc'] = 'If set to yes, snippets that are called but not found will be logged to the error log.';

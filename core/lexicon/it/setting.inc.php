@@ -95,8 +95,11 @@ $_lang['setting_allow_manager_login_forgot_password_desc'] = 'Se impostato su "N
 $_lang['setting_allow_tags_in_post'] = 'Consenti Tags HTML in POST';
 $_lang['setting_allow_tags_in_post_desc'] = 'Se falso "NO", tutte le azioni di tipo POST dentro il manager elimineranno qualsiasi tags. MODX raccomanda di lasciare questa opzione impostata su vero "SI".';
 
-$_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
-$_lang['setting_anonymous_sessions'] = 'Anonymous Sessions';
+$_lang['setting_allow_tv_eval'] = 'Disattivare eval nel binding della TV';
+$_lang['setting_allow_tv_eval_desc'] = 'Selezionare questa opzione per abilitare o disabilitare eval nel binding della TV. Se questa opzione è impostata su no, il codice/valore appena verrà gestito come testo normale.';
+
+$_lang['setting_anonymous_sessions'] = 'Sessioni anonime';
+$_lang['setting_anonymous_sessions_desc'] = 'Se disabilitata, solo gli utenti autenticati avranno accesso a una sessione PHP. Ciò può ridurre il sovraccarico per gli utenti anonimi e il carico che esse impongono un sito MODX se non hanno bisogno di accedere a una sessione univoca. Se session_enabled è false, questa impostazione non ha effetto come sessioni non sarebbe mai disponibile.';
 
 $_lang['setting_archive_with'] = 'Forza Archivi PCLZip';
 $_lang['setting_archive_with_desc'] = 'Se vero, sarà usata PCLZip invece di ZipArchive come estensione zip. Abilita questa opzione se riscontri errori di tipo extractTo o se hai problemi con la decompattazione nel Gestore dei Pacchetti.';
@@ -127,6 +130,9 @@ $_lang['setting_cache_action_map_desc'] = 'Se impostata su "SI", le azioni (o le
 
 $_lang['setting_cache_alias_map'] = 'Abilita Context Alias Map Cache';
 $_lang['setting_cache_alias_map_desc'] = 'Quando abilitato, tutti gli URIs delle Risorse sono inseriti nella cache del Contesto. Abilitalo su siti pi&ugrave; piccoli e disabilitalo su siti pi&ugrave; grandi per avere prestazioni migliori.';
+
+$_lang['setting_use_context_resource_table'] = 'Utilizzare la tabella del contesto della risorsa';
+$_lang['setting_use_context_resource_table_desc'] = 'Quando attivata, gli aggiornamenti del contesto utilizzano la tabella context_resource. Ciò consente di avere in paniera programmatica, una risorsa in più contesti. Se non devi usare queste risorse in contesti multipli tramite API, puoi impostare falso. Su siti di grandi dimensioni miglioreranno le prestazioni del manager.';
 
 $_lang['setting_cache_context_settings'] = 'Abilita Cache Impostazione dei Contesti';
 $_lang['setting_cache_context_settings_desc'] = 'Se impostata su "SI", le impostazioni dei contesti saranno inserite in cache per ridurre il tempo di caricamento.';
@@ -423,9 +429,6 @@ $_lang['setting_manager_date_format_desc'] = 'La stringa, nel formato PHP date()
 $_lang['setting_manager_favicon_url'] = 'Favicon URL Manager';
 $_lang['setting_manager_favicon_url_desc'] = 'Se impostata, caricherà questa URL come favicon per il manager di MODX. Deve essere una URL relativa alla directory manager/ , o un URL assoluto.';
 
-$_lang['setting_manager_html5_cache'] = 'Usa la Cache locale di  HTML5 nel Manager';
-$_lang['setting_manager_html5_cache_desc'] = 'SPERIMENTALE. Usa il caching locale di HTML5 per il Manager. Uso raccomandato solo se si usa il manager con Broswer "recenti".';
-
 $_lang['setting_manager_js_cache_file_locking'] = 'Abilita il File Locking per la Cache JS/CSS del Manager';
 $_lang['setting_manager_js_cache_file_locking_desc'] = 'Blocco File Cache. Setta a  NO se il filesytem e\' NFS.';
 $_lang['setting_manager_js_cache_max_age'] = 'Durata della Compressione della Cache JS/CSS del Manager';
@@ -489,14 +492,17 @@ $_lang['setting_new_file_permissions_desc'] = 'Quando carichi un nuovo file nel 
 $_lang['setting_new_folder_permissions'] = 'Permessi Nuova Cartella';
 $_lang['setting_new_folder_permissions_desc'] = 'Quando crei una nuova cartella nel File Manager, il manager proverà a cambiare i permessi della cartella con quelli inseriti qui. Questo potrebbe non funzionare su alcune installazioni, come con IIS, in questi casi dovrai cambiare manualmente i permessi.';
 
-$_lang['setting_parser_recurse_uncacheable'] = 'Delay Uncacheable Parsing';
-$_lang['setting_parser_recurse_uncacheable_desc'] = 'If disabled, uncacheable elements may have their output cached inside cacheable element content. Disable this ONLY if you are having problems with complex nested parsing which stopped working as expected.';
+$_lang['setting_parser_recurse_uncacheable'] = 'Ritardo parsing non cacheable';
+$_lang['setting_parser_recurse_uncacheable_desc'] = 'Se disattivato, gli elementi che non vengono inseriti in cache possono avere il loro output cached dentro il contenuto di un elemento in cache. Disattivare questo SOLO se si riscontrano problemi con parsing complesso annidato che smette di funzionare come previsto.';
 
 $_lang['setting_password_generated_length'] = 'Lunghezza Password Auto-Generata';
 $_lang['setting_password_generated_length_desc'] = 'La lunghezza della password auto-generata dal gestore per un utente.';
 
 $_lang['setting_password_min_length'] = 'Lunghezza minima password';
 $_lang['setting_password_min_length_desc'] = 'La lunghezza minima per la password che deve utilizzare un utente.';
+
+$_lang['setting_preserve_menuindex'] = 'Preserve Menu Index When Duplicating Resources';
+$_lang['setting_preserve_menuindex_desc'] = 'When duplicating Resources, the menu index order will also be preserved.';
 
 $_lang['setting_principal_targets'] = 'Targets ACL da caricare';
 $_lang['setting_principal_targets_desc'] = 'Personalizza i targets ACL da caricare per gli utenti di MODX.';
@@ -810,3 +816,6 @@ $_lang['setting_default_username_desc'] = 'Nome utente predefinito per un utente
 
 $_lang['setting_manager_use_fullname'] = 'Visualizza nome esteso nella testata del manager ';
 $_lang['setting_manager_use_fullname_desc'] = 'Se impostato su yes, il contenuto del campo "fullname" verrà mostrato nel manager invece di "loginname"';
+
+$_lang['log_snippet_not_found'] = 'Log snippets non trovato';
+$_lang['log_snippet_not_found_desc'] = 'Se impostato su si, snippets che sono chiamati ma non trovati, verranno registrati nel log di errore.';

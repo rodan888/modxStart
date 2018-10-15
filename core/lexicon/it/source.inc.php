@@ -24,7 +24,7 @@ $_lang['source_description_desc'] = 'Una breve descrizione della Media Source.';
 $_lang['source_duplicate'] = 'Duplica la Media Source';
 $_lang['source_err_ae_name'] = 'Una Media Source con quel nome esiste già! Si prega di specificare un nuovo nome.';
 $_lang['source_err_nf'] = 'Media Source non trovata!';
-$_lang['source_err_nfs'] = 'Nessuna Media Source può essere trovata con l\'id: [[+ id]].';
+$_lang['source_err_nfs'] = 'Nessuna Media Source può essere trovata con l\'id: [[+id]].';
 $_lang['source_err_ns'] = 'Si prega di specificare la Media Source.';
 $_lang['source_err_ns_name'] = 'Si prega di specificare un nome per la Media Source.';
 $_lang['source_name_desc'] = 'Il nome della Media Source.';
@@ -80,6 +80,7 @@ $_lang['prop_s3.thumbnailQuality_desc'] = 'La qualità delle miniature create, i
 $_lang['prop_s3.thumbnailType_desc'] = 'Il tipo di immagine da usare per le miniature.';
 $_lang['prop_s3.url_desc'] = 'L\'URL dell\'istanza Amazon S3.';
 $_lang['s3_no_move_folder'] = 'Il driver S3 non supporta lo spostamento delle cartelle in questo momento.';
+$_lang['prop_s3.region_desc'] = 'Region of the bucket. Example: us-west-1';
 
 /* file type */
 $_lang['PNG'] = 'PNG';

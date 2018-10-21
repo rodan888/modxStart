@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 15 2018 г., 13:28
+-- Время создания: Окт 21 2018 г., 10:21
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.3.29
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `modx_access_context` (
   KEY `principal` (`principal`),
   KEY `authority` (`authority`),
   KEY `policy` (`policy`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `modx_access_context`
@@ -115,7 +115,9 @@ INSERT INTO `modx_access_context` (`id`, `target`, `principal_class`, `principal
 (2, 'mgr', 'modUserGroup', 1, 0, 2),
 (3, 'web', 'modUserGroup', 1, 0, 2),
 (4, 'web', 'modUserGroup', 2, 9999, 16),
-(5, 'mgr', 'modUserGroup', 2, 9999, 16);
+(5, 'mgr', 'modUserGroup', 2, 9999, 16),
+(6, 'web', 'modUserGroup', 3, 9999, 17),
+(7, 'mgr', 'modUserGroup', 3, 9999, 17);
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `modx_access_media_source` (
   KEY `authority` (`authority`),
   KEY `policy` (`policy`),
   KEY `context_key` (`context_key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `modx_access_media_source`
@@ -169,8 +171,11 @@ CREATE TABLE IF NOT EXISTS `modx_access_media_source` (
 
 INSERT INTO `modx_access_media_source` (`id`, `target`, `principal_class`, `principal`, `authority`, `policy`, `context_key`) VALUES
 (3, '3', 'modUserGroup', 2, 9999, 8, 'mgr'),
-(2, '1', 'modUserGroup', 1, 0, 8, ''),
-(4, '3', 'modUserGroup', 1, 0, 8, '');
+(6, '1', 'modUserGroup', 1, 0, 8, ''),
+(4, '3', 'modUserGroup', 1, 0, 8, ''),
+(9, '4', 'modUserGroup', 3, 9999, 8, 'mgr'),
+(10, '4', 'modUserGroup', 1, 0, 8, ''),
+(11, '2', 'modUserGroup', 1, 0, 8, '');
 
 -- --------------------------------------------------------
 
@@ -496,7 +501,7 @@ CREATE TABLE IF NOT EXISTS `modx_access_policies` (
   KEY `parent` (`parent`),
   KEY `class` (`class`),
   KEY `template` (`template`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Дамп данных таблицы `modx_access_policies`
@@ -518,7 +523,8 @@ INSERT INTO `modx_access_policies` (`id`, `name`, `description`, `parent`, `temp
 (13, 'TicketUserPolicy', 'A policy for create and update Tickets.', 0, 8, '', '{"ticket_delete":true,"ticket_publish":true,"ticket_save":true,"ticket_vote":true,"ticket_star":true,"comment_save":true,"comment_delete":true,"comment_remove":true,"comment_publish":true,"comment_vote":true,"comment_star":true,"ticket_file_upload":true,"ticket_file_delete":true,"thread_close":true,"thread_delete":true,"thread_remove":true}', 'tickets:permissions'),
 (14, 'TicketSectionPolicy', 'A policy for add tickets in section.', 0, 9, '', '{"section_add_children":true}', 'tickets:permissions'),
 (15, 'TicketVipPolicy', 'A policy for create and update private Tickets.', 0, 8, '', '{"ticket_delete":true,"ticket_publish":true,"ticket_save":true,"ticket_vote":true,"ticket_star":true,"comment_save":true,"comment_delete":true,"comment_remove":true,"comment_publish":true,"comment_vote":true,"comment_star":true,"ticket_view_private":true,"ticket_file_upload":true,"ticket_file_delete":true,"thread_close":true,"thread_delete":true,"thread_remove":true}', 'tickets:permissions'),
-(16, 'Manager', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{"about":false,"access_permissions":false,"actions":false,"change_password":false,"change_profile":true,"charsets":false,"class_map":true,"components":false,"content_types":false,"countries":true,"create":false,"credits":false,"customize_forms":false,"dashboards":false,"database":false,"database_truncate":false,"delete_category":false,"delete_chunk":false,"delete_context":false,"delete_document":true,"delete_eventlog":false,"delete_plugin":false,"delete_propertyset":false,"delete_role":false,"delete_snippet":false,"delete_template":false,"delete_tv":false,"delete_user":false,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":false,"edit_chunk":false,"edit_context":false,"edit_document":true,"edit_locked":false,"edit_plugin":false,"edit_propertyset":false,"edit_role":false,"edit_snippet":false,"edit_template":false,"edit_tv":false,"edit_user":false,"element_tree":false,"empty_cache":false,"error_log_erase":false,"error_log_view":false,"events":false,"export_static":false,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_unpack":false,"file_update":true,"file_upload":true,"file_view":true,"flush_sessions":false,"frames":true,"help":true,"home":true,"import_static":false,"languages":false,"lexicons":false,"list":true,"load":true,"logout":true,"logs":false,"menus":false,"menu_reports":true,"menu_security":false,"menu_site":true,"menu_support":true,"menu_system":false,"menu_tools":true,"menu_user":true,"messages":false,"namespaces":false,"new_category":false,"new_chunk":false,"new_context":false,"new_document":true,"new_document_in_root":false,"new_plugin":false,"new_propertyset":false,"new_role":false,"new_snippet":false,"new_static_resource":false,"new_symlink":false,"new_template":false,"new_tv":false,"new_user":false,"new_weblink":false,"packages":true,"policy_delete":false,"policy_edit":false,"policy_new":false,"policy_save":false,"policy_template_delete":false,"policy_template_edit":false,"policy_template_new":false,"policy_template_save":false,"policy_template_view":false,"policy_view":false,"property_sets":false,"providers":false,"publish_document":false,"purge_deleted":false,"remove":false,"remove_locks":false,"resourcegroup_delete":false,"resourcegroup_edit":false,"resourcegroup_new":false,"resourcegroup_resource_edit":false,"resourcegroup_resource_list":false,"resourcegroup_save":false,"resourcegroup_view":false,"resource_duplicate":true,"resource_quick_create":false,"resource_quick_update":false,"resource_tree":true,"save":false,"save_category":false,"save_chunk":false,"save_context":false,"save_document":true,"save_plugin":false,"save_propertyset":false,"save_role":false,"save_snippet":false,"save_template":false,"save_tv":false,"save_user":false,"search":true,"settings":false,"sources":false,"source_delete":false,"source_edit":false,"source_save":false,"source_view":true,"steal_locks":false,"tree_show_element_ids":false,"tree_show_resource_ids":true,"undelete_document":false,"unlock_element_properties":false,"unpublish_document":false,"usergroup_delete":false,"usergroup_edit":false,"usergroup_new":false,"usergroup_save":false,"usergroup_user_edit":false,"usergroup_user_list":false,"usergroup_view":false,"view":true,"view_category":false,"view_chunk":false,"view_context":false,"view_document":true,"view_element":false,"view_eventlog":false,"view_offline":false,"view_plugin":false,"view_propertyset":false,"view_role":false,"view_snippet":false,"view_sysinfo":false,"view_template":false,"view_tv":false,"view_unpublished":false,"view_user":false,"workspaces":false}', 'permissions');
+(16, 'Manager', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{"about":false,"access_permissions":false,"actions":false,"change_password":false,"change_profile":true,"charsets":false,"class_map":true,"components":false,"content_types":false,"countries":true,"create":false,"credits":false,"customize_forms":false,"dashboards":false,"database":false,"database_truncate":false,"delete_category":false,"delete_chunk":false,"delete_context":false,"delete_document":true,"delete_eventlog":false,"delete_plugin":false,"delete_propertyset":false,"delete_role":false,"delete_snippet":false,"delete_template":false,"delete_tv":false,"delete_user":false,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":false,"edit_chunk":false,"edit_context":false,"edit_document":true,"edit_locked":false,"edit_plugin":false,"edit_propertyset":false,"edit_role":false,"edit_snippet":false,"edit_template":false,"edit_tv":false,"edit_user":false,"element_tree":false,"empty_cache":false,"error_log_erase":false,"error_log_view":false,"events":false,"export_static":false,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_unpack":false,"file_update":true,"file_upload":true,"file_view":true,"flush_sessions":false,"frames":true,"help":true,"home":true,"import_static":false,"languages":false,"lexicons":false,"list":true,"load":true,"logout":true,"logs":false,"menus":false,"menu_reports":true,"menu_security":false,"menu_site":true,"menu_support":true,"menu_system":false,"menu_tools":true,"menu_user":true,"messages":false,"namespaces":false,"new_category":false,"new_chunk":false,"new_context":false,"new_document":true,"new_document_in_root":false,"new_plugin":false,"new_propertyset":false,"new_role":false,"new_snippet":false,"new_static_resource":false,"new_symlink":false,"new_template":false,"new_tv":false,"new_user":false,"new_weblink":false,"packages":true,"policy_delete":false,"policy_edit":false,"policy_new":false,"policy_save":false,"policy_template_delete":false,"policy_template_edit":false,"policy_template_new":false,"policy_template_save":false,"policy_template_view":false,"policy_view":false,"property_sets":false,"providers":false,"publish_document":false,"purge_deleted":false,"remove":false,"remove_locks":false,"resourcegroup_delete":false,"resourcegroup_edit":false,"resourcegroup_new":false,"resourcegroup_resource_edit":false,"resourcegroup_resource_list":false,"resourcegroup_save":false,"resourcegroup_view":false,"resource_duplicate":true,"resource_quick_create":false,"resource_quick_update":false,"resource_tree":true,"save":false,"save_category":false,"save_chunk":false,"save_context":false,"save_document":true,"save_plugin":false,"save_propertyset":false,"save_role":false,"save_snippet":false,"save_template":false,"save_tv":false,"save_user":false,"search":true,"settings":false,"sources":false,"source_delete":false,"source_edit":false,"source_save":false,"source_view":true,"steal_locks":false,"tree_show_element_ids":false,"tree_show_resource_ids":true,"undelete_document":false,"unlock_element_properties":false,"unpublish_document":false,"usergroup_delete":false,"usergroup_edit":false,"usergroup_new":false,"usergroup_save":false,"usergroup_user_edit":false,"usergroup_user_list":false,"usergroup_view":false,"view":true,"view_category":false,"view_chunk":false,"view_context":false,"view_document":true,"view_element":false,"view_eventlog":false,"view_offline":false,"view_plugin":false,"view_propertyset":false,"view_role":false,"view_snippet":false,"view_sysinfo":false,"view_template":false,"view_tv":false,"view_unpublished":false,"view_user":false,"workspaces":false}', 'permissions'),
+(17, 'Менеджер', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{"about":false,"access_permissions":false,"actions":false,"change_password":false,"change_profile":true,"charsets":false,"class_map":true,"components":false,"content_types":false,"countries":true,"create":false,"credits":false,"customize_forms":false,"dashboards":false,"database":false,"database_truncate":false,"delete_category":false,"delete_chunk":false,"delete_context":false,"delete_document":true,"delete_eventlog":false,"delete_plugin":false,"delete_propertyset":false,"delete_role":false,"delete_snippet":false,"delete_template":false,"delete_tv":false,"delete_user":false,"directory_chmod":true,"directory_create":true,"directory_list":true,"directory_remove":true,"directory_update":true,"edit_category":false,"edit_chunk":false,"edit_context":false,"edit_document":true,"edit_locked":false,"edit_plugin":false,"edit_propertyset":false,"edit_role":false,"edit_snippet":false,"edit_template":false,"edit_tv":false,"edit_user":false,"element_tree":false,"empty_cache":false,"error_log_erase":false,"error_log_view":false,"events":false,"export_static":false,"file_create":true,"file_list":true,"file_manager":true,"file_remove":true,"file_tree":true,"file_unpack":false,"file_update":true,"file_upload":true,"file_view":true,"flush_sessions":false,"frames":true,"help":true,"home":true,"import_static":false,"languages":false,"lexicons":false,"list":true,"load":true,"logout":true,"logs":false,"menus":false,"menu_reports":true,"menu_security":false,"menu_site":true,"menu_support":true,"menu_system":false,"menu_tools":true,"menu_user":true,"messages":false,"namespaces":false,"new_category":false,"new_chunk":false,"new_context":false,"new_document":true,"new_document_in_root":false,"new_plugin":false,"new_propertyset":false,"new_role":false,"new_snippet":false,"new_static_resource":false,"new_symlink":false,"new_template":false,"new_tv":false,"new_user":false,"new_weblink":false,"packages":true,"policy_delete":false,"policy_edit":false,"policy_new":false,"policy_save":false,"policy_template_delete":false,"policy_template_edit":false,"policy_template_new":false,"policy_template_save":false,"policy_template_view":false,"policy_view":false,"property_sets":false,"providers":false,"publish_document":false,"purge_deleted":false,"remove":false,"remove_locks":false,"resourcegroup_delete":false,"resourcegroup_edit":false,"resourcegroup_new":false,"resourcegroup_resource_edit":false,"resourcegroup_resource_list":false,"resourcegroup_save":false,"resourcegroup_view":false,"resource_duplicate":true,"resource_quick_create":false,"resource_quick_update":false,"resource_tree":true,"save":false,"save_category":false,"save_chunk":false,"save_context":false,"save_document":true,"save_plugin":false,"save_propertyset":false,"save_role":false,"save_snippet":false,"save_template":false,"save_tv":false,"save_user":false,"search":true,"settings":false,"sources":false,"source_delete":false,"source_edit":false,"source_save":false,"source_view":true,"steal_locks":false,"tree_show_element_ids":false,"tree_show_resource_ids":true,"undelete_document":false,"unlock_element_properties":false,"unpublish_document":false,"usergroup_delete":false,"usergroup_edit":false,"usergroup_new":false,"usergroup_save":false,"usergroup_user_edit":false,"usergroup_user_list":false,"usergroup_view":false,"view":true,"view_category":false,"view_chunk":false,"view_context":false,"view_document":true,"view_element":false,"view_eventlog":false,"view_offline":false,"view_plugin":false,"view_propertyset":false,"view_role":false,"view_snippet":false,"view_sysinfo":false,"view_template":true,"view_tv":false,"view_unpublished":false,"view_user":false,"workspaces":false}', 'permissions');
 
 -- --------------------------------------------------------
 
@@ -619,7 +625,7 @@ CREATE TABLE IF NOT EXISTS `modx_access_resource_groups` (
   KEY `authority` (`authority`),
   KEY `policy` (`policy`),
   KEY `context_key` (`context_key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `modx_access_resource_groups`
@@ -1269,7 +1275,7 @@ CREATE TABLE IF NOT EXISTS `modx_documentgroup_names` (
   `private_webgroup` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `modx_documentgroup_names`
@@ -1291,7 +1297,7 @@ CREATE TABLE IF NOT EXISTS `modx_document_groups` (
   PRIMARY KEY (`id`),
   KEY `document_group` (`document_group`),
   KEY `document` (`document`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `modx_document_groups`
@@ -1299,7 +1305,8 @@ CREATE TABLE IF NOT EXISTS `modx_document_groups` (
 
 INSERT INTO `modx_document_groups` (`id`, `document_group`, `document`) VALUES
 (1, 1, 3),
-(2, 1, 2);
+(2, 1, 2),
+(3, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -1450,7 +1457,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `item` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `user_occurred` (`user`,`occurred`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=130 ;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -1542,7 +1549,50 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (83, 1, '2018-10-15 13:20:09', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 29 Default'),
 (84, 1, '2018-10-15 13:24:07', 'resource_update', 'modResource', '1'),
 (85, 1, '2018-10-15 13:26:46', 'chunk_update', 'modChunk', '32'),
-(86, 1, '2018-10-15 13:26:46', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 32 Default');
+(86, 1, '2018-10-15 13:26:46', 'propertyset_update_from_element', 'modPropertySet', 'modChunk 32 Default'),
+(87, 1, '2018-10-21 09:15:05', 'policy_duplicate', 'modAccessPolicy', '17'),
+(88, 1, '2018-10-21 09:21:08', 'policy_update', 'modAccessPolicy', '17'),
+(89, 1, '2018-10-21 09:21:32', 'policy_update', 'modAccessPolicy', '17'),
+(90, 1, '2018-10-21 09:23:34', 'user_group_create', 'modUserGroup', '3'),
+(91, 1, '2018-10-21 09:24:54', 'access_context_update', 'modAccessContext', '6'),
+(92, 1, '2018-10-21 09:25:10', 'access_context_update', 'modAccessContext', '7'),
+(93, 1, '2018-10-21 09:25:22', 'user_group_update', 'modUserGroup', '3'),
+(94, 1, '2018-10-21 09:27:22', 'user_delete', 'modUser', '2'),
+(95, 1, '2018-10-21 09:40:15', 'user_create', 'modUser', '3'),
+(96, 1, '2018-10-21 09:41:38', 'user_update', 'modUser', '3'),
+(97, 3, '2018-10-21 09:42:39', 'login', 'modContext', 'mgr'),
+(98, 1, '2018-10-21 09:45:00', 'source_delete', 'sources.modMediaSource', '3'),
+(99, 1, '2018-10-21 09:45:07', 'source_duplicate', 'sources.modMediaSource', '4'),
+(100, 1, '2018-10-21 09:46:55', 'directory_create', '', 'C:/OpenServer/domains/ModxStart/assets/images'),
+(101, 1, '2018-10-21 09:48:09', 'source_update', 'sources.modMediaSource', '4'),
+(102, 1, '2018-10-21 09:49:54', 'source_create', 'sources.modAccessMediaSource', '5'),
+(103, 1, '2018-10-21 09:49:57', 'user_group_update', 'modUserGroup', '3'),
+(104, 1, '2018-10-21 09:50:16', 'clear_cache', '', 'mgr'),
+(105, 1, '2018-10-21 09:51:59', 'source_update', 'sources.modMediaSource', '1'),
+(106, 1, '2018-10-21 09:53:14', 'source_update', 'sources.modMediaSource', '4'),
+(107, 1, '2018-10-21 09:53:44', 'source_update', 'sources.modMediaSource', '4'),
+(108, 1, '2018-10-21 09:53:50', 'clear_cache', '', 'mgr'),
+(109, 1, '2018-10-21 09:54:54', 'source_update', 'sources.modMediaSource', '2'),
+(110, 1, '2018-10-21 09:55:01', 'clear_cache', '', 'mgr'),
+(111, 1, '2018-10-21 09:58:49', 'resource_group_create', 'modResourceGroup', '2'),
+(112, 1, '2018-10-21 09:59:06', 'delete_resource_group', 'modResourceGroup', '2'),
+(113, 1, '2018-10-21 10:01:37', 'resource_create', 'modDocument', '4'),
+(114, 1, '2018-10-21 10:03:06', 'resource_create', 'modDocument', '5'),
+(115, 1, '2018-10-21 10:03:22', 'resource_update', 'modResource', '5'),
+(116, 1, '2018-10-21 10:03:33', 'resource_update', 'modResource', '5'),
+(117, 3, '2018-10-21 10:04:06', 'login', 'modContext', 'mgr'),
+(118, 1, '2018-10-21 10:04:30', 'resource_group_resource_create', 'modResourceGroupResource', '3'),
+(119, 1, '2018-10-21 10:04:41', 'clear_cache', '', 'mgr'),
+(120, 1, '2018-10-21 10:07:24', 'tv_update', 'modTemplateVar', '2'),
+(121, 1, '2018-10-21 10:07:24', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(122, 3, '2018-10-21 10:08:47', 'login', 'modContext', 'mgr'),
+(123, 1, '2018-10-21 10:15:41', 'policy_update', 'modAccessPolicy', '17'),
+(124, 1, '2018-10-21 10:15:48', 'clear_cache', '', 'mgr'),
+(125, 1, '2018-10-21 10:17:42', 'tv_update', 'modTemplateVar', '2'),
+(126, 1, '2018-10-21 10:17:43', 'propertyset_update_from_element', 'modPropertySet', 'modTemplateVar 2 Default'),
+(127, 1, '2018-10-21 10:18:42', 'policy_update', 'modAccessPolicy', '17'),
+(128, 1, '2018-10-21 10:18:48', 'policy_update', 'modAccessPolicy', '17'),
+(129, 1, '2018-10-21 10:18:55', 'clear_cache', '', 'mgr');
 
 -- --------------------------------------------------------
 
@@ -1561,7 +1611,7 @@ CREATE TABLE IF NOT EXISTS `modx_media_sources` (
   KEY `name` (`name`),
   KEY `class_key` (`class_key`),
   KEY `is_stream` (`is_stream`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `modx_media_sources`
@@ -1569,8 +1619,8 @@ CREATE TABLE IF NOT EXISTS `modx_media_sources` (
 
 INSERT INTO `modx_media_sources` (`id`, `name`, `description`, `class_key`, `properties`, `is_stream`) VALUES
 (1, 'Filesystem', '', 'sources.modFileMediaSource', 'a:0:{}', 1),
-(2, 'Tickets Files', 'Default media source for files of tickets', 'sources.modFileMediaSource', 'a:10:{s:8:"basePath";a:5:{s:4:"name";s:8:"basePath";s:4:"desc";s:23:"prop_file.basePath_desc";s:4:"type";s:9:"textfield";s:7:"lexicon";s:11:"core:source";s:5:"value";s:22:"assets/images/tickets/";}s:7:"baseUrl";a:5:{s:4:"name";s:7:"baseUrl";s:4:"desc";s:22:"prop_file.baseUrl_desc";s:4:"type";s:9:"textfield";s:7:"lexicon";s:11:"core:source";s:5:"value";s:22:"assets/images/tickets/";}s:15:"imageExtensions";a:5:{s:4:"name";s:15:"imageExtensions";s:4:"desc";s:30:"prop_file.imageExtensions_desc";s:4:"type";s:9:"textfield";s:7:"lexicon";s:11:"core:source";s:5:"value";s:16:"jpg,jpeg,png,gif";}s:16:"allowedFileTypes";a:5:{s:4:"name";s:16:"allowedFileTypes";s:4:"desc";s:31:"prop_file.allowedFileTypes_desc";s:4:"type";s:9:"textfield";s:7:"lexicon";s:11:"core:source";s:5:"value";s:16:"jpg,jpeg,png,gif";}s:13:"thumbnailType";a:6:{s:4:"name";s:13:"thumbnailType";s:4:"desc";s:28:"prop_file.thumbnailType_desc";s:4:"type";s:4:"list";s:7:"lexicon";s:11:"core:source";s:7:"options";a:2:{i:0;a:2:{s:4:"text";s:3:"Png";s:5:"value";s:3:"png";}i:1;a:2:{s:4:"text";s:3:"Jpg";s:5:"value";s:3:"jpg";}}s:5:"value";s:3:"jpg";}s:9:"thumbnail";a:5:{s:4:"name";s:9:"thumbnail";s:4:"desc";s:29:"tickets.source_thumbnail_desc";s:4:"type";s:8:"textarea";s:7:"lexicon";s:15:"tickets:setting";s:5:"value";s:56:"{"thumb":{"w":120,"h":90,"q":90,"zc":"1","bg":"000000"}}";}s:14:"maxUploadWidth";a:5:{s:4:"name";s:14:"maxUploadWidth";s:4:"desc";s:34:"tickets.source_maxUploadWidth_desc";s:4:"type";s:11:"numberfield";s:7:"lexicon";s:15:"tickets:setting";s:5:"value";i:1920;}s:15:"maxUploadHeight";a:5:{s:4:"name";s:15:"maxUploadHeight";s:4:"desc";s:35:"tickets.source_maxUploadHeight_desc";s:4:"type";s:11:"numberfield";s:7:"lexicon";s:15:"tickets:setting";s:5:"value";i:1080;}s:13:"maxUploadSize";a:5:{s:4:"name";s:13:"maxUploadSize";s:4:"desc";s:33:"tickets.source_maxUploadSize_desc";s:4:"type";s:11:"numberfield";s:7:"lexicon";s:15:"tickets:setting";s:5:"value";i:3145728;}s:13:"imageNameType";a:6:{s:4:"name";s:13:"imageNameType";s:4:"desc";s:33:"tickets.source_imageNameType_desc";s:4:"type";s:4:"list";s:7:"lexicon";s:15:"tickets:setting";s:7:"options";a:2:{i:0;a:2:{s:4:"text";s:4:"Hash";s:5:"value";s:4:"hash";}i:1;a:2:{s:4:"text";s:8:"Friendly";s:5:"value";s:8:"friendly";}}s:5:"value";s:4:"hash";}}', 1),
-(3, 'images', '', 'sources.modFileMediaSource', 'a:2:{s:8:"basePath";a:6:{s:4:"name";s:8:"basePath";s:4:"desc";s:23:"prop_file.basePath_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:11:"design/img/";s:7:"lexicon";s:11:"core:source";}s:7:"baseUrl";a:6:{s:4:"name";s:7:"baseUrl";s:4:"desc";s:22:"prop_file.baseUrl_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:11:"design/img/";s:7:"lexicon";s:11:"core:source";}}', 1);
+(2, 'Tickets Files', 'Default media source for files of tickets', 'sources.modFileMediaSource', 'a:10:{s:8:"basePath";a:6:{s:4:"name";s:8:"basePath";s:4:"desc";s:23:"prop_file.basePath_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:22:"assets/images/tickets/";s:7:"lexicon";s:11:"core:source";}s:7:"baseUrl";a:6:{s:4:"name";s:7:"baseUrl";s:4:"desc";s:22:"prop_file.baseUrl_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:22:"assets/images/tickets/";s:7:"lexicon";s:11:"core:source";}s:16:"allowedFileTypes";a:6:{s:4:"name";s:16:"allowedFileTypes";s:4:"desc";s:31:"prop_file.allowedFileTypes_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"jpg,jpeg,png,gif";s:7:"lexicon";s:11:"core:source";}s:15:"imageExtensions";a:6:{s:4:"name";s:15:"imageExtensions";s:4:"desc";s:30:"prop_file.imageExtensions_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:16:"jpg,jpeg,png,gif";s:7:"lexicon";s:11:"core:source";}s:13:"thumbnailType";a:6:{s:4:"name";s:13:"thumbnailType";s:4:"desc";s:28:"prop_file.thumbnailType_desc";s:4:"type";s:4:"list";s:7:"options";a:2:{i:0;a:2:{s:4:"text";s:3:"Png";s:5:"value";s:3:"png";}i:1;a:2:{s:4:"text";s:3:"Jpg";s:5:"value";s:3:"jpg";}}s:5:"value";s:3:"jpg";s:7:"lexicon";s:11:"core:source";}s:9:"thumbnail";a:6:{s:4:"name";s:9:"thumbnail";s:4:"desc";s:29:"tickets.source_thumbnail_desc";s:4:"type";s:8:"textarea";s:7:"options";a:0:{}s:5:"value";s:56:"{"thumb":{"w":120,"h":90,"q":90,"zc":"1","bg":"000000"}}";s:7:"lexicon";s:15:"tickets:setting";}s:14:"maxUploadWidth";a:6:{s:4:"name";s:14:"maxUploadWidth";s:4:"desc";s:34:"tickets.source_maxUploadWidth_desc";s:4:"type";s:11:"numberfield";s:7:"options";a:0:{}s:5:"value";i:1920;s:7:"lexicon";s:15:"tickets:setting";}s:15:"maxUploadHeight";a:6:{s:4:"name";s:15:"maxUploadHeight";s:4:"desc";s:35:"tickets.source_maxUploadHeight_desc";s:4:"type";s:11:"numberfield";s:7:"options";a:0:{}s:5:"value";i:1080;s:7:"lexicon";s:15:"tickets:setting";}s:13:"maxUploadSize";a:6:{s:4:"name";s:13:"maxUploadSize";s:4:"desc";s:33:"tickets.source_maxUploadSize_desc";s:4:"type";s:11:"numberfield";s:7:"options";a:0:{}s:5:"value";i:3145728;s:7:"lexicon";s:15:"tickets:setting";}s:13:"imageNameType";a:6:{s:4:"name";s:13:"imageNameType";s:4:"desc";s:33:"tickets.source_imageNameType_desc";s:4:"type";s:4:"list";s:7:"options";a:2:{i:0;a:2:{s:4:"text";s:4:"Hash";s:5:"value";s:4:"hash";}i:1;a:2:{s:4:"text";s:8:"Friendly";s:5:"value";s:8:"friendly";}}s:5:"value";s:4:"hash";s:7:"lexicon";s:15:"tickets:setting";}}', 1),
+(4, 'Images', '', 'sources.modFileMediaSource', 'a:2:{s:8:"basePath";a:6:{s:4:"name";s:8:"basePath";s:4:"desc";s:23:"prop_file.basePath_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:14:"assets/images/";s:7:"lexicon";s:11:"core:source";}s:7:"baseUrl";a:6:{s:4:"name";s:7:"baseUrl";s:4:"desc";s:22:"prop_file.baseUrl_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:14:"assets/images/";s:7:"lexicon";s:11:"core:source";}}', 1);
 
 -- --------------------------------------------------------
 
@@ -1603,11 +1653,11 @@ CREATE TABLE IF NOT EXISTS `modx_media_sources_elements` (
 --
 
 INSERT INTO `modx_media_sources_elements` (`source`, `object_class`, `object`, `context_key`) VALUES
-(1, 'modTemplateVar', 2, 'web'),
 (1, 'modTemplateVar', 3, 'web'),
 (1, 'modTemplateVar', 4, 'web'),
 (1, 'modTemplateVar', 5, 'web'),
-(1, 'modTemplateVar', 7, 'web');
+(1, 'modTemplateVar', 7, 'web'),
+(4, 'modTemplateVar', 2, 'web');
 
 -- --------------------------------------------------------
 
@@ -1627,7 +1677,7 @@ CREATE TABLE IF NOT EXISTS `modx_membergroup_names` (
   KEY `parent` (`parent`),
   KEY `rank` (`rank`),
   KEY `dashboard` (`dashboard`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `modx_membergroup_names`
@@ -1635,7 +1685,8 @@ CREATE TABLE IF NOT EXISTS `modx_membergroup_names` (
 
 INSERT INTO `modx_membergroup_names` (`id`, `name`, `description`, `parent`, `rank`, `dashboard`) VALUES
 (1, 'Administrator', NULL, 0, 0, 1),
-(2, 'content-manager', '', 0, 0, 1);
+(2, 'content-manager', '', 0, 0, 1),
+(3, 'Контент менеджер', '', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1652,7 +1703,7 @@ CREATE TABLE IF NOT EXISTS `modx_member_groups` (
   PRIMARY KEY (`id`),
   KEY `role` (`role`),
   KEY `rank` (`rank`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `modx_member_groups`
@@ -1660,7 +1711,7 @@ CREATE TABLE IF NOT EXISTS `modx_member_groups` (
 
 INSERT INTO `modx_member_groups` (`id`, `user_group`, `member`, `role`, `rank`) VALUES
 (3, 1, 1, 2, 0),
-(2, 2, 2, 2, 0);
+(4, 3, 3, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -1957,14 +2008,15 @@ CREATE TABLE IF NOT EXISTS `modx_register_queues` (
   `options` mediumtext,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `modx_register_queues`
 --
 
 INSERT INTO `modx_register_queues` (`id`, `name`, `options`) VALUES
-(1, 'locks', 'a:1:{s:9:"directory";s:5:"locks";}');
+(1, 'locks', 'a:1:{s:9:"directory";s:5:"locks";}'),
+(2, 'resource_reload', 'a:1:{s:9:"directory";s:15:"resource_reload";}');
 
 -- --------------------------------------------------------
 
@@ -1982,14 +2034,15 @@ CREATE TABLE IF NOT EXISTS `modx_register_topics` (
   PRIMARY KEY (`id`),
   KEY `queue` (`queue`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `modx_register_topics`
 --
 
 INSERT INTO `modx_register_topics` (`id`, `queue`, `name`, `created`, `updated`, `options`) VALUES
-(1, 1, '/resource/', '2016-06-24 16:41:22', NULL, NULL);
+(1, 1, '/resource/', '2016-06-24 16:41:22', NULL, NULL),
+(2, 2, '/resourcereload/', '2018-10-21 10:01:14', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2010,7 +2063,10 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('4rpnstt0pj0coudtetsp2nukq2', 1539598867, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_15bc45a46b05ae8.40834939";modx.mgr.session.cookie.lifetime|i:604800;modx.mgr.user.config|a:0:{}modx.user.1.userGroupNames|a:1:{i:0;s:13:"Administrator";}newResourceTokens|a:5:{i:0;s:23:"5bc45ae4761131.92178100";i:1;s:23:"5bc45b93889c88.20050727";i:2;s:23:"5bc45c99d449f2.81122882";i:3;s:23:"5bc45cdc18a2a5.22775060";i:4;s:23:"5bc46a1209ca11.62787722";}');
+('4rpnstt0pj0coudtetsp2nukq2', 1540105750, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_15bc45a46b05ae8.40834939";modx.mgr.session.cookie.lifetime|i:604800;modx.mgr.user.config|a:0:{}modx.user.1.userGroupNames|a:1:{i:0;s:13:"Administrator";}newResourceTokens|a:13:{i:0;s:23:"5bc45ae4761131.92178100";i:1;s:23:"5bc45b93889c88.20050727";i:2;s:23:"5bc45c99d449f2.81122882";i:3;s:23:"5bc45cdc18a2a5.22775060";i:4;s:23:"5bc46a1209ca11.62787722";i:5;s:23:"5bcc240d5a1bc6.45632583";i:6;s:23:"5bcc243b84ec24.05684305";i:7;s:23:"5bcc2452e53793.33338264";i:8;s:23:"5bcc24767bea03.20900859";i:9;s:23:"5bcc24ac44b884.07790048";i:10;s:23:"5bcc25b81a5562.58059220";i:11;s:23:"5bcc25d9571d82.16629660";i:12;s:23:"5bcc261660a669.76823959";}modx.user.2.userGroupNames|a:1:{i:0;s:15:"content-manager";}modx.user.1.userGroups|a:1:{i:0;i:1;}'),
+('mdll87ipe9f3900q1ebs02aed4', 1540104846, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:3;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_35bcc1fdf54c1d6.35475210";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}modx.user.3.resourceGroups|a:1:{s:3:"mgr";a:0:{}}modx.user.3.attributes|a:1:{s:3:"mgr";a:5:{s:16:"modAccessContext";a:2:{s:3:"mgr";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}s:3:"web";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:1:{i:4;a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:7:{s:6:"create";b:1;s:4:"copy";b:1;s:4:"load";b:1;s:4:"list";b:1;s:4:"save";b:1;s:6:"remove";b:1;s:4:"view";b:1;}}}}s:18:"modAccessNamespace";a:0:{}}}'),
+('cp8jvgvap237uoen16lo12pia1', 1540105519, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:3;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_35bcc24e6c4f0b6.85852584";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}modx.user.3.resourceGroups|a:1:{s:3:"mgr";a:0:{}}modx.user.3.attributes|a:1:{s:3:"mgr";a:5:{s:16:"modAccessContext";a:2:{s:3:"mgr";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}s:3:"web";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:1:{i:4;a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:7:{s:6:"create";b:1;s:4:"copy";b:1;s:4:"load";b:1;s:4:"list";b:1;s:4:"save";b:1;s:6:"remove";b:1;s:4:"view";b:1;}}}}s:18:"modAccessNamespace";a:0:{}}}newResourceTokens|a:1:{i:0;s:23:"5bcc252ed09766.89094828";}'),
+('e75ujipvsqisoh8g14g5q02bi1', 1540106378, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:3;}modx.mgr.user.token|s:52:"modx5bc45a0e3165d5.44435369_35bcc25ff2a3e09.77504112";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}modx.user.3.resourceGroups|a:1:{s:3:"mgr";a:0:{}}modx.user.3.attributes|a:1:{s:3:"mgr";a:5:{s:16:"modAccessContext";a:2:{s:3:"mgr";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}s:3:"web";a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:174:{s:5:"about";b:0;s:18:"access_permissions";b:0;s:7:"actions";b:0;s:15:"change_password";b:0;s:14:"change_profile";b:1;s:8:"charsets";b:0;s:9:"class_map";b:1;s:10:"components";b:0;s:13:"content_types";b:0;s:9:"countries";b:1;s:6:"create";b:0;s:7:"credits";b:0;s:15:"customize_forms";b:0;s:10:"dashboards";b:0;s:8:"database";b:0;s:17:"database_truncate";b:0;s:15:"delete_category";b:0;s:12:"delete_chunk";b:0;s:14:"delete_context";b:0;s:15:"delete_document";b:1;s:15:"delete_eventlog";b:0;s:13:"delete_plugin";b:0;s:18:"delete_propertyset";b:0;s:11:"delete_role";b:0;s:14:"delete_snippet";b:0;s:15:"delete_template";b:0;s:9:"delete_tv";b:0;s:11:"delete_user";b:0;s:15:"directory_chmod";b:1;s:16:"directory_create";b:1;s:14:"directory_list";b:1;s:16:"directory_remove";b:1;s:16:"directory_update";b:1;s:13:"edit_category";b:0;s:10:"edit_chunk";b:0;s:12:"edit_context";b:0;s:13:"edit_document";b:1;s:11:"edit_locked";b:0;s:11:"edit_plugin";b:0;s:16:"edit_propertyset";b:0;s:9:"edit_role";b:0;s:12:"edit_snippet";b:0;s:13:"edit_template";b:0;s:7:"edit_tv";b:0;s:9:"edit_user";b:0;s:12:"element_tree";b:0;s:11:"empty_cache";b:0;s:15:"error_log_erase";b:0;s:14:"error_log_view";b:0;s:6:"events";b:0;s:13:"export_static";b:0;s:11:"file_create";b:1;s:9:"file_list";b:1;s:12:"file_manager";b:1;s:11:"file_remove";b:1;s:9:"file_tree";b:1;s:11:"file_unpack";b:0;s:11:"file_update";b:1;s:11:"file_upload";b:1;s:9:"file_view";b:1;s:14:"flush_sessions";b:0;s:6:"frames";b:1;s:4:"help";b:1;s:4:"home";b:1;s:13:"import_static";b:0;s:9:"languages";b:0;s:8:"lexicons";b:0;s:4:"list";b:1;s:4:"load";b:1;s:6:"logout";b:1;s:4:"logs";b:0;s:5:"menus";b:0;s:12:"menu_reports";b:1;s:13:"menu_security";b:0;s:9:"menu_site";b:1;s:12:"menu_support";b:1;s:11:"menu_system";b:0;s:10:"menu_tools";b:1;s:9:"menu_user";b:1;s:8:"messages";b:0;s:10:"namespaces";b:0;s:12:"new_category";b:0;s:9:"new_chunk";b:0;s:11:"new_context";b:0;s:12:"new_document";b:1;s:20:"new_document_in_root";b:0;s:10:"new_plugin";b:0;s:15:"new_propertyset";b:0;s:8:"new_role";b:0;s:11:"new_snippet";b:0;s:19:"new_static_resource";b:0;s:11:"new_symlink";b:0;s:12:"new_template";b:0;s:6:"new_tv";b:0;s:8:"new_user";b:0;s:11:"new_weblink";b:0;s:8:"packages";b:1;s:13:"policy_delete";b:0;s:11:"policy_edit";b:0;s:10:"policy_new";b:0;s:11:"policy_save";b:0;s:22:"policy_template_delete";b:0;s:20:"policy_template_edit";b:0;s:19:"policy_template_new";b:0;s:20:"policy_template_save";b:0;s:20:"policy_template_view";b:0;s:11:"policy_view";b:0;s:13:"property_sets";b:0;s:9:"providers";b:0;s:16:"publish_document";b:0;s:13:"purge_deleted";b:0;s:6:"remove";b:0;s:12:"remove_locks";b:0;s:20:"resourcegroup_delete";b:0;s:18:"resourcegroup_edit";b:0;s:17:"resourcegroup_new";b:0;s:27:"resourcegroup_resource_edit";b:0;s:27:"resourcegroup_resource_list";b:0;s:18:"resourcegroup_save";b:0;s:18:"resourcegroup_view";b:0;s:18:"resource_duplicate";b:1;s:21:"resource_quick_create";b:0;s:21:"resource_quick_update";b:0;s:13:"resource_tree";b:1;s:4:"save";b:0;s:13:"save_category";b:0;s:10:"save_chunk";b:0;s:12:"save_context";b:0;s:13:"save_document";b:1;s:11:"save_plugin";b:0;s:16:"save_propertyset";b:0;s:9:"save_role";b:0;s:12:"save_snippet";b:0;s:13:"save_template";b:0;s:7:"save_tv";b:0;s:9:"save_user";b:0;s:6:"search";b:1;s:8:"settings";b:0;s:7:"sources";b:0;s:13:"source_delete";b:0;s:11:"source_edit";b:0;s:11:"source_save";b:0;s:11:"source_view";b:1;s:11:"steal_locks";b:0;s:21:"tree_show_element_ids";b:0;s:22:"tree_show_resource_ids";b:1;s:17:"undelete_document";b:0;s:25:"unlock_element_properties";b:0;s:18:"unpublish_document";b:0;s:16:"usergroup_delete";b:0;s:14:"usergroup_edit";b:0;s:13:"usergroup_new";b:0;s:14:"usergroup_save";b:0;s:19:"usergroup_user_edit";b:0;s:19:"usergroup_user_list";b:0;s:14:"usergroup_view";b:0;s:4:"view";b:1;s:13:"view_category";b:0;s:10:"view_chunk";b:0;s:12:"view_context";b:0;s:13:"view_document";b:1;s:12:"view_element";b:0;s:13:"view_eventlog";b:0;s:12:"view_offline";b:0;s:11:"view_plugin";b:0;s:16:"view_propertyset";b:0;s:9:"view_role";b:0;s:12:"view_snippet";b:0;s:12:"view_sysinfo";b:0;s:13:"view_template";b:1;s:7:"view_tv";b:0;s:16:"view_unpublished";b:0;s:9:"view_user";b:0;s:10:"workspaces";b:0;}}}}s:22:"modAccessResourceGroup";a:0:{}s:17:"modAccessCategory";a:0:{}s:28:"sources.modAccessMediaSource";a:1:{i:4;a:1:{i:0;a:3:{s:9:"principal";s:1:"3";s:9:"authority";s:1:"0";s:6:"policy";a:7:{s:6:"create";b:1;s:4:"copy";b:1;s:4:"load";b:1;s:4:"list";b:1;s:4:"save";b:1;s:6:"remove";b:1;s:4:"view";b:1;}}}}s:18:"modAccessNamespace";a:0:{}}}newResourceTokens|a:5:{i:0;s:23:"5bcc260a5a47c4.37655284";i:1;s:23:"5bcc261da72917.11768954";i:2;s:23:"5bcc27b6835625.25895502";i:3;s:23:"5bcc28219f3828.40201344";i:4;s:23:"5bcc2889cafa98.88241505";}');
 
 -- --------------------------------------------------------
 
@@ -2082,7 +2138,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
   KEY `show_in_tree` (`show_in_tree`),
   KEY `cache_refresh_idx` (`parent`,`menuindex`,`id`),
   FULLTEXT KEY `content_ft_idx` (`pagetitle`,`longtitle`,`description`,`introtext`,`content`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `modx_site_content`
@@ -2091,7 +2147,9 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
 INSERT INTO `modx_site_content` (`id`, `type`, `contentType`, `pagetitle`, `longtitle`, `description`, `alias`, `link_attributes`, `published`, `pub_date`, `unpub_date`, `parent`, `isfolder`, `introtext`, `content`, `richtext`, `template`, `menuindex`, `searchable`, `cacheable`, `createdby`, `createdon`, `editedby`, `editedon`, `deleted`, `deletedon`, `deletedby`, `publishedon`, `publishedby`, `menutitle`, `donthit`, `privateweb`, `privatemgr`, `content_dispo`, `hidemenu`, `class_key`, `context_key`, `content_type`, `uri`, `uri_override`, `hide_children_in_tree`, `show_in_tree`, `properties`) VALUES
 (1, 'document', 'text/html', 'Главная', 'Поздравляем!', '', 'index', '', 1, 0, 0, 0, 0, '', '', 1, 1, 0, 1, 1, 1, 1466773018, 1, 1539599046, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'index.html', 0, 0, 1, NULL),
 (2, 'document', 'text/html', '404', 'Page not found', '', '404', '', 0, 0, 0, 0, 0, NULL, NULL, 1, 0, 0, 1, 1, 1, 1466774347, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, '404.html', 0, 0, 1, NULL),
-(3, 'document', 'text/xml', 'Sitemap', '', '', 'sitemap', '', 1, 0, 0, 0, 0, NULL, '[[pdoSitemap]]', 0, 0, 0, 1, 1, 1, 1466774347, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 2, 'sitemap.xml', 0, 0, 1, NULL);
+(3, 'document', 'text/xml', 'Sitemap', '', '', 'sitemap', '', 1, 0, 0, 0, 0, NULL, '[[pdoSitemap]]', 0, 0, 0, 1, 1, 1, 1466774347, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 2, 'sitemap.xml', 0, 0, 1, NULL),
+(4, 'document', 'text/html', 'System', '', '', 'system', '', 0, 0, 0, 0, 1, '', '', 0, 0, 3, 1, 1, 1, 1540105296, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'system/', 0, 0, 1, NULL),
+(5, 'document', 'text/html', 'ajaxPage', '', '', 'ajaxpage', '', 1, 0, 0, 4, 0, '', '[[!pdoPage?\r\n    &parents=`4`\r\n    &depth=`0`\r\n    &limit=`[[!#GET.limit]]`\r\n    &offset=`[[!#GET.offset]]`\r\n    &tpl=`tpl.docsItem`\r\n    &includeTVs=`tv_manual_paragraph`\r\n    &tvPrefix=``\r\n    &includeContent=`1`\r\n    &sortby=`publishedon`\r\n    &sortdir=`DESC`\r\n]]', 0, 0, 0, 1, 1, 1, 1540105386, 1, 1540105413, 0, 0, 0, 1540105380, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'system/ajaxpage.html', 0, 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -2429,7 +2487,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_tmplvars` (
 
 INSERT INTO `modx_site_tmplvars` (`id`, `source`, `property_preprocess`, `type`, `name`, `caption`, `description`, `editor_type`, `category`, `locked`, `elements`, `rank`, `display`, `default_text`, `properties`, `input_properties`, `output_properties`, `static`, `static_file`) VALUES
 (1, 0, 0, 'image', 'tv_image', 'Page image', '', 0, 10, 0, NULL, 0, '', NULL, NULL, NULL, NULL, 0, ''),
-(2, 0, 0, 'image', 'meta_thumb', 'Page thumbnail', '', 0, 15, 0, '', 4, 'default', '', 'a:0:{}', NULL, NULL, 0, ''),
+(2, 4, 0, 'image', 'meta_thumb', 'Page thumbnail', '', 0, 15, 0, '', 4, 'default', '', 'a:0:{}', NULL, NULL, 0, ''),
 (3, 0, 0, 'text', 'meta_title', 'META Title', '', 0, 15, 0, '', 0, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
 (4, 0, 0, 'text', 'meta_description', 'META Description', '', 0, 15, 0, '', 1, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
 (5, 0, 0, 'text', 'meta_keywords', 'META Keywords', '', 0, 15, 0, '', 2, 'default', '', 'a:0:{}', 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}', NULL, 0, ''),
@@ -3142,7 +3200,7 @@ CREATE TABLE IF NOT EXISTS `modx_tickets_authors` (
 --
 
 INSERT INTO `modx_tickets_authors` (`id`, `rating`, `createdon`, `visitedon`, `tickets`, `comments`, `views`, `votes_tickets`, `votes_comments`, `stars_tickets`, `stars_comments`, `votes_tickets_up`, `votes_tickets_down`, `votes_comments_up`, `votes_comments_down`) VALUES
-(2, '0.00', '2016-06-24 17:10:09', NULL, 0, 0, 0, '0.00', '0.00', 0, 0, 0, 0, 0, 0);
+(3, '0.00', '2018-10-21 09:40:15', NULL, 0, 0, 0, '0.00', '0.00', 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3463,7 +3521,7 @@ CREATE TABLE IF NOT EXISTS `modx_users` (
   KEY `class_key` (`class_key`),
   KEY `remote_key` (`remote_key`),
   KEY `primary_group` (`primary_group`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `modx_users`
@@ -3471,7 +3529,7 @@ CREATE TABLE IF NOT EXISTS `modx_users` (
 
 INSERT INTO `modx_users` (`id`, `username`, `password`, `cachepwd`, `class_key`, `active`, `remote_key`, `remote_data`, `hash_class`, `salt`, `primary_group`, `session_stale`, `sudo`, `createdon`) VALUES
 (1, 'modx_test', 'MC/OfPfw4upmWUmwPX2akphQCGpRCvNg7mOPSTyL4No=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', '1076762b40093667851ca219c5809a08', 1, 'a:2:{i:0;s:3:"mgr";i:1;s:3:"web";}', 1, 1466773018),
-(2, 'manager', 'yyRp9fHNFcNkecFy8RX0GvWmqUv3jThRVzEOhttKlM0=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', 'ebccfbe972829962a1468eaee91347cd', 2, 'a:1:{i:1;s:3:"web";}', 0, 1466777409);
+(3, 'manager', '1jiA85RKoaOkbWXOtmHQEeRTwuwt3/2BVHGT6bG38H0=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', 'b5a534932cdda9cbbbdec36ab9819d4c', 3, 'a:1:{i:1;s:3:"web";}', 0, 1540104015);
 
 -- --------------------------------------------------------
 
@@ -3508,7 +3566,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
   `extended` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `internalKey` (`internalKey`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `modx_user_attributes`
@@ -3516,7 +3574,7 @@ CREATE TABLE IF NOT EXISTS `modx_user_attributes` (
 
 INSERT INTO `modx_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
 (1, 1, 'Администратор по умолчанию', 'tsumbaluk888@gmail.com', '', '', 0, 0, 0, 6, 1539594686, 1539594822, 0, '4rpnstt0pj0coudtetsp2nukq2', 0, 0, '', '', '', '', '', '', '', '', '', '[]'),
-(2, 2, '', 'tsumbaluk888@gmail.com', '', '', 0, 0, 0, 1, 0, 1466777637, 0, 'os7vu8ih7mleaj2h3vifv40gi5', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
+(3, 3, '', 'tsumbalu888@gmail.com', '', '', 0, 0, 0, 3, 1540105446, 1540105727, 0, 'e75ujipvsqisoh8g14g5q02bi1', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
 -- --------------------------------------------------------
 
